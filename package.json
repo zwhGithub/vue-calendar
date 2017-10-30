@@ -1,6 +1,6 @@
 {
   "name": "vue-calendar-component",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "基于vue2.0的一款日历组件",
   "main": "index.js",
   "scripts": {
@@ -17,5 +17,7 @@
     "vue-datetime-picker"
   ],
   "author": "zwh",
-  "license": "ISC"
+  "license": "ISC",
+  "_from": "vue-calendar-component@1.2.2",
+  "_resolved": "http://registry.npm.taobao.org/vue-calendar-component/download/vue-calendar-component-1.2.2.tgz"
 }
