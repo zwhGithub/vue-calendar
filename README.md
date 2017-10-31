@@ -43,13 +43,18 @@ Vue.use(Calendar)；
         console.log(data)  //左右点击切换月份
       }
 
-
-chose_day  //点击哪天获取到点击日期
-is_today  //左右点击如果到了本月 获取到日期
-change_month  //左右点击月份获取到日期
-mark_array  //想要这个月哪几天被标记，比如这个月1号、2号，如果不需要可以不传
-is_hide_otherday  //是否让超过今天的日期可以点击，默认是false可以点击  true不让点击
 ```
+
+### API
+* 属性说明
+
+|属性|说明|默认值|是否必传|
+|---|----|---|-----|-------|
+|chose_day|选中某天调用的方法，返回选中的日期YY-MM-DD|无|   否   |
+|change_month|切换月份调用的方法，返回切换到某月的日期YY-MM-DD|无|否|
+|is_today|切换月份的时候，如果切到当前月份，调用这个方法，返回当前月今天|无| 否 |
+|mark_array|如果需要某月的几天被标注，传当月的日期数组。如[,2,6,8]当月2号6号8号被会标注|空数组|否|
+|is_hide_otherday|超过今天的日期是否可以被点击，true是不可以点击，false是可以点击|false|否|
 
 ## Other
 * src下面的App.vue 有demo可以参考.
