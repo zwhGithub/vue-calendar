@@ -23,7 +23,7 @@ cnpm i vue-calendar-component --save  //国内镜像
 //main.js中引入
 
 import Calendar from 'vue-calendar-component'；
-import 'vue-calendar-component/style.css’;
+import 'vue-calendar-component/style.css';
 Vue.use(Calendar)；
 
  <Calendar v-on:chose_day="clickday"
@@ -52,5 +52,5 @@ is_hide_otherday  //是否让超过今天的日期可以点击，默认是false�
 ```
 
 ## Other
-* src下面的App.vue 有demo可以参考，如果有其他问题或者版本上.
-* 功能上不兼容的 邮件沟通 452216418@qq.com
+* src下面的App.vue 有demo可以参考.
+* 如果有其他问题或者版本上, 功能上不兼容的 邮件沟通 452216418@qq.com
