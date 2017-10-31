@@ -1,23 +1,47 @@
 {
-  "name": "vue-calendar-component",
-  "version": "2.0.0",
-  "description": "基于vue2.0的一款日历组件",
+  "name": "wh-publish-env",
+  "version": "1.0.0",
+  "description": "打包环境",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node build/server.js",
+    "compile": "node build/compile.js && npm publish ./vue-calendar-component"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zwhGithub"
-  },
-  "keywords": [
-    "vue-calendar",
-    "calendar",
-    "vue-datetime",
-    "vue-datetime-picker"
-  ],
   "author": "zwh",
-  "license": "ISC",
-  "_from": "vue-calendar-component@1.2.2",
-  "_resolved": "http://registry.npm.taobao.org/vue-calendar-component/download/vue-calendar-component-1.2.2.tgz"
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.3.3",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "chalk": "^1.1.3",
+    "clean-webpack-plugin": "^0.1.16",
+    "connect-history-api-fallback": "^1.3.0",
+    "css-loader": "^0.27.3",
+    "eventsource-polyfill": "^0.9.6",
+    "express": "^4.15.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-webpack-plugin": "^2.28.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.2",
+    "opn": "^4.0.2",
+    "postcss-loader": "^1.3.3",
+    "rimraf": "^2.6.1",
+    "semver": "^5.3.0",
+    "shelljs": "^0.7.7",
+    "style-loader": "^0.16.1",
+    "uglifyjs-webpack-plugin": "^0.3.1",
+    "url-loader": "^0.5.8",
+    "vue": "^2.2.6",
+    "vue-calendar-component": "^2.1.1",
+    "vue-loader": "^11.3.3",
+    "vue-template-compiler": "^2.2.6",
+    "webpack": "^2.3.2",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.17.1"
+  }
 }
