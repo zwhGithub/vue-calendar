@@ -29,7 +29,7 @@ Vue.use(Calendar)；
  <Calendar v-on:chose_day="clickday"
            v-on:is_today="clicktoday"
            v-on:change_month="change_date"
-           mark_array="[1,2]" //选中1号2号
+           mark_array="[1,2]" //标记1号2号
            :is_hide_otherday=true
            ></Calendar>
 
