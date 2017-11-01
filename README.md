@@ -20,25 +20,25 @@ cnpm i vue-calendar-component --save  //国内镜像
 ```javascript
 //main.js中引入
 
-import Calendar from 'vue-calendar-component'；
+import Calendar from 'vue-calendar-component';
 import 'vue-calendar-component/style.css';
-Vue.use(Calendar)；
+Vue.use(Calendar);
 
  <Calendar v-on:chose_day="clickday"
            v-on:is_today="clicktoday"
            v-on:change_month="change_date"
-           mark_array="[1,2]" //标记1号2号
-           :is_hide_otherday=true
+           :mark_array = [1,2]
+           :is_hide_otherday = true
            ></Calendar>
 
       clickday(data){
         console.log(data) //选中某天
       },
-      clicktoday(data){
-        console.log(data)  //跳到了本月
-      },
       change_date(data){
         console.log(data)  //左右点击切换月份
+      },
+      clicktoday(data){
+        console.log(data)  //切换月份的时候，如果切到当前月份,调用这个方法
       }
 
 ```
