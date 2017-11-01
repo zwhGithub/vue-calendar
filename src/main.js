@@ -6,8 +6,7 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-import Calendar from 'vue-calendar-component';
-import 'vue-calendar-component/style.css';
+import Calendar from './vue-calendar-component';
 Vue.use(Calendar);
 
 /* eslint-disable no-new */
