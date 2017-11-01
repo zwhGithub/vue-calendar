@@ -23,36 +23,36 @@
 .wh_content:first-child .wh_content_item {
   color: #ddd;
   font-size: 16px;
-  height: 15vmin;
-  line-height: 15vmin;
+  height: 15vw;
+  line-height: 15vw;
 }
 
 .wh_content_item {
   font-size: 15px;
-  height: 10.3vmin;
-  line-height: 10.3vmin;
-  width: 13.4vmin;
+  height: 10.3vw;
+  line-height: 10.3vw;
+  width: 13.4vw;
   text-align: center;
   color: #fff;
 }
 
 .wh_is_today {
-  width: 9vmin;
-  height: 9vmin;
-  line-height: 9vmin;
+  width: 9vw;
+  height: 9vw;
+  line-height: 9vw;
   margin: auto;
-  margin-top: 0.65vmin;
+  margin-top: 0.65vw;
   background-color: #fff;
   color: #0fc37c;
   border-radius: 100px;
   text-align: center;
 }
 .wh_is_mark {
-  width: 9vmin;
-  height: 9vmin;
-  line-height: 9vmin;
+  width: 9vw;
+  height: 9vw;
+  line-height: 9vw;
   margin: auto;
-  margin-top: 0.65vmin;
+  margin-top: 0.65vw;
   border-radius: 100px;
   border: 1px solid red;
   z-index: 2;
