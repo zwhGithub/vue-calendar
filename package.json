@@ -2,7 +2,7 @@
   "name": "vue-demo",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "wh",
+  "author": "wh   git push origin master:gh-pages",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
