@@ -30,7 +30,7 @@ Vue.use(Calendar);
            v-on:is_today="clicktoday"
            v-on:change_month="change_date"
            :mark_array = [1,2]
-           :is_hide_otherday = true
+           :is_hide_otherday = false
            ></Calendar>
 
       clickday(data){
