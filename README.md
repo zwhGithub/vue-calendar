@@ -24,7 +24,6 @@ cnpm i vue-calendar-component --save  //国内镜像
 //main.js中引入
 
 import Calendar from 'vue-calendar-component';
-import 'vue-calendar-component/style.css';
 Vue.use(Calendar);
 
  <Calendar v-on:chose_day="clickday"
