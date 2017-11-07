@@ -3,7 +3,7 @@
 * 占用内存小，性能好，样式好看，可扩展性强
 
 ## Demo
-* [请用浏览器的手机模式查看](https://zwhgithub.github.io/vue-calendar/dist/#/)
+* [Live Demo](https://zwhgithub.github.io/vue-calendar/dist/#/) 请用浏览器的手机模式查看
 
 
 
