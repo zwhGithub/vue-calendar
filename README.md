@@ -4,7 +4,7 @@
 
 ## Demo
 * [请用浏览器的手机模式查看](https://zwhgithub.github.io/vue-calendar/dist/#/)
-![效果](https://qiniu.epipe.cn/5465939501580804096?imageView2/1/w/320/h/568)
+* ![效果](https://qiniu.epipe.cn/5465939501580804096?imageView2/1/w/320/h/568)
 
 ## Why
 * Github上太多一个输入框点击弹出日历选择某个时间的组件，却没有找到适合一个单纯展示日历并且能点击获取时间的组件
