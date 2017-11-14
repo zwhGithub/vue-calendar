@@ -4,9 +4,7 @@
 
 ### Demo 
 
-![效果](https://zwhgithub.github.io/vue-calendar/dist/1510652959.png)      
-
-[或者请用浏览器的手机模式查看](https://zwhgithub.github.io/vue-calendar/dist/#/) 
+![效果](https://zwhgithub.github.io/vue-calendar/dist/1510652959.png)      [或者请用浏览器的手机模式查看](https://zwhgithub.github.io/vue-calendar/dist/#/) 
 
 ### 效果
  ![效果](https://qiniu.epipe.cn/5465939501580804096?imageView2/1/w/290/h/470)
