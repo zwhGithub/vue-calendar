@@ -24,7 +24,7 @@
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
 15 verbose pkgid vue-demo@1.0.0
 16 verbose cwd /Users/bt/git/github/vue-calendar
-17 error Darwin 16.6.0
+17 error Darwin 16.7.0
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "build"
 19 error node v6.11.5
 20 error npm  v3.10.10
