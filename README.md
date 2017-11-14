@@ -2,12 +2,14 @@
 * 基于 vue 2.0 开发的轻量，高性能日历组件
 * 占用内存小，性能好，样式好看，可扩展性强
 
-## Demo
-[Live Demo](https://zwhgithub.github.io/vue-calendar/dist/#/) （请用浏览器的手机模式查看）
+### Demo 
 
-* 效果展示
+![效果](https://zwhgithub.github.io/vue-calendar/dist/1510652959.png)      
 
- ![效果](https://qiniu.epipe.cn/5465939501580804096?imageView2/1/w/320/h/568)
+[或者请用浏览器的手机模式查看](https://zwhgithub.github.io/vue-calendar/dist/#/) 
+
+### 效果
+ ![效果](https://qiniu.epipe.cn/5465939501580804096?imageView2/1/w/290/h/470)
 
 ## Why
 * Github上太多一个输入框点击弹出日历选择某个时间的组件，却没有找到适合一个单纯展示日历并且能点击获取时间的组件
@@ -57,3 +59,4 @@ Vue.use(Calendar);
 ## Other
 * src下面的App.vue 有demo可以参考.
 * 如果有其他问题或者版本上, 功能上不兼容的 邮件沟通 452216418@qq.com
+
