@@ -2,11 +2,11 @@
 * 基于 vue 2.0 开发的轻量，高性能日历组件
 * 占用内存小，性能好，样式好看，可扩展性强
 
-## Demo
-*  ![效果](https://zwhgithub.github.io/vue-calendar/dist/1510652959.png)
-[Live Demo](https://zwhgithub.github.io/vue-calendar/dist/#/) （请用浏览器的手机模式查看）
+## Demo 
 
-* 效果展示
+*  ![效果](https://zwhgithub.github.io/vue-calendar/dist/1510652959.png)      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp[或者请用浏览器的手机模式查看](https://zwhgithub.github.io/vue-calendar/dist/#/) 
+
+## 效果
  ![效果](https://qiniu.epipe.cn/5465939501580804096?imageView2/1/w/320/h/568)
 
 ## Why
