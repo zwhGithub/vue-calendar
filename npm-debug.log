@@ -1,14 +1,14 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'build' ]
 2 info using npm@3.10.10
-3 info using node@v6.11.5
+3 info using node@v6.12.0
 4 verbose run-script [ 'prebuild', 'build', 'postbuild' ]
 5 info lifecycle vue-demo@1.0.0~prebuild: vue-demo@1.0.0
 6 silly lifecycle vue-demo@1.0.0~prebuild: no script for prebuild, continuing
 7 info lifecycle vue-demo@1.0.0~build: vue-demo@1.0.0
 8 verbose lifecycle vue-demo@1.0.0~build: unsafe-perm in lifecycle true
-9 verbose lifecycle vue-demo@1.0.0~build: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/bt/git/github/vue-calendar/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-10 verbose lifecycle vue-demo@1.0.0~build: CWD: /Users/bt/git/github/vue-calendar
+9 verbose lifecycle vue-demo@1.0.0~build: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/zwh/work/git/vue-calendar/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+10 verbose lifecycle vue-demo@1.0.0~build: CWD: /Users/zwh/work/git/vue-calendar
 11 silly lifecycle vue-demo@1.0.0~build: Args: [ '-c', 'node build/build.js' ]
 12 silly lifecycle vue-demo@1.0.0~build: Returned: code: 1  signal: null
 13 info lifecycle vue-demo@1.0.0~build: Failed to exec build script
@@ -23,10 +23,10 @@
 14 verbose stack     at maybeClose (internal/child_process.js:920:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
 15 verbose pkgid vue-demo@1.0.0
-16 verbose cwd /Users/bt/git/github/vue-calendar
-17 error Darwin 16.7.0
+16 verbose cwd /Users/zwh/work/git/vue-calendar
+17 error Darwin 16.6.0
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "build"
-19 error node v6.11.5
+19 error node v6.12.0
 20 error npm  v3.10.10
 21 error code ELIFECYCLE
 22 error vue-demo@1.0.0 build: `node build/build.js`
