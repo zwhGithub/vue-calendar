@@ -12,7 +12,7 @@
 
 ## 效果
  ![效果](https://qiniu.epipe.cn/5465939501580804096?imageView2/1/w/290/h/470)
-
+- 觉得好用给一个star哦 ~~~
 
 
 ## Install
