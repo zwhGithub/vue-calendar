@@ -1,0 +1,616 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'parcel' ]
+2 info using npm@3.10.10
+3 info using node@v6.12.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData parcel
+8 silly fetchNamedPackageData parcel
+9 silly mapToRegistry name parcel
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npm.taobao.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'parcel',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'parcel',
+12 silly mapToRegistry   name: 'parcel',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npm.taobao.org/parcel
+14 verbose request uri https://registry.npm.taobao.org/parcel
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 14:26:22
+17 verbose request id 6d93321a503770a2
+18 http request GET https://registry.npm.taobao.org/parcel
+19 http 200 https://registry.npm.taobao.org/parcel
+20 verbose headers { date: 'Tue, 16 Jan 2018 06:26:25 GMT',
+20 verbose headers   'content-type': 'application/json; charset=utf-8',
+20 verbose headers   'content-length': '3813',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-current-requests': '1',
+20 verbose headers   vary: 'Origin',
+20 verbose headers   etag: '"ee5-jvk4exJZp+XfOz7gmsEbllqKe2k"',
+20 verbose headers   'x-readtime': '26' }
+21 silly get cb [ 200,
+21 silly get   { date: 'Tue, 16 Jan 2018 06:26:25 GMT',
+21 silly get     'content-type': 'application/json; charset=utf-8',
+21 silly get     'content-length': '3813',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-current-requests': '1',
+21 silly get     vary: 'Origin',
+21 silly get     etag: '"ee5-jvk4exJZp+XfOz7gmsEbllqKe2k"',
+21 silly get     'x-readtime': '26' } ]
+22 verbose get saving parcel to /Users/zwh/.npm/registry.npm.taobao.org/parcel/.cache.json
+23 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule parcel@0.0.1 checking installable status
+37 silly cache add args [ 'parcel', null ]
+38 verbose cache add spec parcel
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'parcel',
+39 silly cache add   scope: null,
+39 silly cache add   escapedName: 'parcel',
+39 silly cache add   name: 'parcel',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: 'latest',
+39 silly cache add   type: 'tag' }
+40 silly addNamed parcel@latest
+41 verbose addNamed "latest" is being treated as a dist-tag for parcel
+42 info addNameTag [ 'parcel', 'latest' ]
+43 silly mapToRegistry name parcel
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npm.taobao.org/
+46 silly mapToRegistry data Result {
+46 silly mapToRegistry   raw: 'parcel',
+46 silly mapToRegistry   scope: null,
+46 silly mapToRegistry   escapedName: 'parcel',
+46 silly mapToRegistry   name: 'parcel',
+46 silly mapToRegistry   rawSpec: '',
+46 silly mapToRegistry   spec: 'latest',
+46 silly mapToRegistry   type: 'tag' }
+47 silly mapToRegistry uri https://registry.npm.taobao.org/parcel
+48 verbose addNameTag registry:https://registry.npm.taobao.org/parcel not in flight; fetching
+49 verbose get https://registry.npm.taobao.org/parcel not expired, no request
+50 silly addNameTag next cb for parcel with tag latest
+51 silly addNamed parcel@0.0.1
+52 verbose addNamed "0.0.1" is a plain semver version for parcel
+53 silly mapToRegistry name parcel
+54 silly mapToRegistry using default registry
+55 silly mapToRegistry registry https://registry.npm.taobao.org/
+56 silly mapToRegistry data Result {
+56 silly mapToRegistry   raw: 'parcel',
+56 silly mapToRegistry   scope: null,
+56 silly mapToRegistry   escapedName: 'parcel',
+56 silly mapToRegistry   name: 'parcel',
+56 silly mapToRegistry   rawSpec: '',
+56 silly mapToRegistry   spec: 'latest',
+56 silly mapToRegistry   type: 'tag' }
+57 silly mapToRegistry uri https://registry.npm.taobao.org/parcel
+58 verbose addRemoteTarball https://registry.npm.taobao.org/parcel/download/parcel-0.0.1.tgz not in flight; adding
+59 verbose addRemoteTarball [ 'https://registry.npm.taobao.org/parcel/download/parcel-0.0.1.tgz',
+59 verbose addRemoteTarball   'fb91c66015317c2a7db750c2ce7e54aa3715492c' ]
+60 info retry fetch attempt 1 at 14:26:22
+61 info attempt registry request try #1 at 14:26:22
+62 http fetch GET https://registry.npm.taobao.org/parcel/download/parcel-0.0.1.tgz
+63 http fetch 200 https://registry.npm.taobao.org/parcel/download/parcel-0.0.1.tgz
+64 silly fetchAndShaCheck shasum fb91c66015317c2a7db750c2ce7e54aa3715492c
+65 verbose addTmpTarball /var/folders/bd/nfr83lw93gx43jwww8tsc80h0000gn/T/npm-76435-b9cbf9b6/registry.npm.taobao.org/parcel/download/parcel-0.0.1.tgz not in flight; adding
+66 verbose addTmpTarball already have metadata; skipping unpack for parcel@0.0.1
+67 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+68 silly cache afterAdd parcel@0.0.1
+69 verbose afterAdd /Users/zwh/.npm/parcel/0.0.1/package/package.json not in flight; writing
+70 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+71 verbose afterAdd /Users/zwh/.npm/parcel/0.0.1/package/package.json written
+72 silly fetchNamedPackageData commander
+73 silly mapToRegistry name commander
+74 silly mapToRegistry using default registry
+75 silly mapToRegistry registry https://registry.npm.taobao.org/
+76 silly mapToRegistry data Result {
+76 silly mapToRegistry   raw: 'commander',
+76 silly mapToRegistry   scope: null,
+76 silly mapToRegistry   escapedName: 'commander',
+76 silly mapToRegistry   name: 'commander',
+76 silly mapToRegistry   rawSpec: '',
+76 silly mapToRegistry   spec: 'latest',
+76 silly mapToRegistry   type: 'tag' }
+77 silly mapToRegistry uri https://registry.npm.taobao.org/commander
+78 silly fetchNamedPackageData path-extra
+79 silly mapToRegistry name path-extra
+80 silly mapToRegistry using default registry
+81 silly mapToRegistry registry https://registry.npm.taobao.org/
+82 silly mapToRegistry data Result {
+82 silly mapToRegistry   raw: 'path-extra',
+82 silly mapToRegistry   scope: null,
+82 silly mapToRegistry   escapedName: 'path-extra',
+82 silly mapToRegistry   name: 'path-extra',
+82 silly mapToRegistry   rawSpec: '',
+82 silly mapToRegistry   spec: 'latest',
+82 silly mapToRegistry   type: 'tag' }
+83 silly mapToRegistry uri https://registry.npm.taobao.org/path-extra
+84 silly fetchNamedPackageData aws-sdk
+85 silly mapToRegistry name aws-sdk
+86 silly mapToRegistry using default registry
+87 silly mapToRegistry registry https://registry.npm.taobao.org/
+88 silly mapToRegistry data Result {
+88 silly mapToRegistry   raw: 'aws-sdk',
+88 silly mapToRegistry   scope: null,
+88 silly mapToRegistry   escapedName: 'aws-sdk',
+88 silly mapToRegistry   name: 'aws-sdk',
+88 silly mapToRegistry   rawSpec: '',
+88 silly mapToRegistry   spec: 'latest',
+88 silly mapToRegistry   type: 'tag' }
+89 silly mapToRegistry uri https://registry.npm.taobao.org/aws-sdk
+90 silly fetchNamedPackageData debug
+91 silly mapToRegistry name debug
+92 silly mapToRegistry using default registry
+93 silly mapToRegistry registry https://registry.npm.taobao.org/
+94 silly mapToRegistry data Result {
+94 silly mapToRegistry   raw: 'debug',
+94 silly mapToRegistry   scope: null,
+94 silly mapToRegistry   escapedName: 'debug',
+94 silly mapToRegistry   name: 'debug',
+94 silly mapToRegistry   rawSpec: '',
+94 silly mapToRegistry   spec: 'latest',
+94 silly mapToRegistry   type: 'tag' }
+95 silly mapToRegistry uri https://registry.npm.taobao.org/debug
+96 verbose request uri https://registry.npm.taobao.org/path-extra
+97 verbose request no auth needed
+98 info attempt registry request try #1 at 14:26:22
+99 http request GET https://registry.npm.taobao.org/path-extra
+100 verbose request uri https://registry.npm.taobao.org/aws-sdk
+101 verbose request no auth needed
+102 info attempt registry request try #1 at 14:26:22
+103 http request GET https://registry.npm.taobao.org/aws-sdk
+104 verbose request uri https://registry.npm.taobao.org/commander
+105 verbose request no auth needed
+106 info attempt registry request try #1 at 14:26:22
+107 verbose etag "151e0-stVFTSsI6RoVPC363ZkCYDhFlvY"
+108 http request GET https://registry.npm.taobao.org/commander
+109 verbose request uri https://registry.npm.taobao.org/debug
+110 verbose request no auth needed
+111 info attempt registry request try #1 at 14:26:22
+112 verbose etag "1c1ec-0+i0MUO8v/rcZjcQGuY+6rsa28Y"
+113 http request GET https://registry.npm.taobao.org/debug
+114 http 200 https://registry.npm.taobao.org/path-extra
+115 verbose headers { date: 'Tue, 16 Jan 2018 06:26:25 GMT',
+115 verbose headers   'content-type': 'application/json; charset=utf-8',
+115 verbose headers   'content-length': '26723',
+115 verbose headers   connection: 'keep-alive',
+115 verbose headers   'x-current-requests': '1',
+115 verbose headers   vary: 'Origin',
+115 verbose headers   etag: '"6863-Fa/st2R3w4sMTRKz9rtRtcQT2lU"',
+115 verbose headers   'x-readtime': '30' }
+116 silly get cb [ 200,
+116 silly get   { date: 'Tue, 16 Jan 2018 06:26:25 GMT',
+116 silly get     'content-type': 'application/json; charset=utf-8',
+116 silly get     'content-length': '26723',
+116 silly get     connection: 'keep-alive',
+116 silly get     'x-current-requests': '1',
+116 silly get     vary: 'Origin',
+116 silly get     etag: '"6863-Fa/st2R3w4sMTRKz9rtRtcQT2lU"',
+116 silly get     'x-readtime': '30' } ]
+117 verbose get saving path-extra to /Users/zwh/.npm/registry.npm.taobao.org/path-extra/.cache.json
+118 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+119 silly resolveWithNewModule path-extra@0.1.1 checking installable status
+120 silly cache add args [ 'path-extra@0.1.x', null ]
+121 verbose cache add spec path-extra@0.1.x
+122 silly cache add parsed spec Result {
+122 silly cache add   raw: 'path-extra@0.1.x',
+122 silly cache add   scope: null,
+122 silly cache add   escapedName: 'path-extra',
+122 silly cache add   name: 'path-extra',
+122 silly cache add   rawSpec: '0.1.x',
+122 silly cache add   spec: '>=0.1.0 <0.2.0',
+122 silly cache add   type: 'range' }
+123 silly addNamed path-extra@>=0.1.0 <0.2.0
+124 verbose addNamed ">=0.1.0 <0.2.0" is a valid semver range for path-extra
+125 silly addNameRange { name: 'path-extra', range: '>=0.1.0 <0.2.0', hasData: false }
+126 silly mapToRegistry name path-extra
+127 silly mapToRegistry using default registry
+128 silly mapToRegistry registry https://registry.npm.taobao.org/
+129 silly mapToRegistry data Result {
+129 silly mapToRegistry   raw: 'path-extra',
+129 silly mapToRegistry   scope: null,
+129 silly mapToRegistry   escapedName: 'path-extra',
+129 silly mapToRegistry   name: 'path-extra',
+129 silly mapToRegistry   rawSpec: '',
+129 silly mapToRegistry   spec: 'latest',
+129 silly mapToRegistry   type: 'tag' }
+130 silly mapToRegistry uri https://registry.npm.taobao.org/path-extra
+131 verbose addNameRange registry:https://registry.npm.taobao.org/path-extra not in flight; fetching
+132 verbose get https://registry.npm.taobao.org/path-extra not expired, no request
+133 silly addNameRange number 2 { name: 'path-extra', range: '>=0.1.0 <0.2.0', hasData: true }
+134 silly addNameRange versions [ 'path-extra',
+134 silly addNameRange   [ '4.2.1',
+134 silly addNameRange     '4.2.0',
+134 silly addNameRange     '4.1.0',
+134 silly addNameRange     '4.0.0',
+134 silly addNameRange     '3.0.0',
+134 silly addNameRange     '2.0.0',
+134 silly addNameRange     '1.0.3',
+134 silly addNameRange     '1.0.2',
+134 silly addNameRange     '1.0.1',
+134 silly addNameRange     '1.0.0',
+134 silly addNameRange     '0.3.0',
+134 silly addNameRange     '0.2.1',
+134 silly addNameRange     '0.2.0',
+134 silly addNameRange     '0.1.1',
+134 silly addNameRange     '0.1.0',
+134 silly addNameRange     '0.0.3',
+134 silly addNameRange     '0.0.2',
+134 silly addNameRange     '0.0.1' ] ]
+135 silly addNamed path-extra@0.1.1
+136 verbose addNamed "0.1.1" is a plain semver version for path-extra
+137 silly mapToRegistry name path-extra
+138 silly mapToRegistry using default registry
+139 silly mapToRegistry registry https://registry.npm.taobao.org/
+140 silly mapToRegistry data Result {
+140 silly mapToRegistry   raw: 'path-extra',
+140 silly mapToRegistry   scope: null,
+140 silly mapToRegistry   escapedName: 'path-extra',
+140 silly mapToRegistry   name: 'path-extra',
+140 silly mapToRegistry   rawSpec: '',
+140 silly mapToRegistry   spec: 'latest',
+140 silly mapToRegistry   type: 'tag' }
+141 silly mapToRegistry uri https://registry.npm.taobao.org/path-extra
+142 verbose addRemoteTarball https://registry.npm.taobao.org/path-extra/download/path-extra-0.1.1.tgz not in flight; adding
+143 verbose addRemoteTarball [ 'https://registry.npm.taobao.org/path-extra/download/path-extra-0.1.1.tgz',
+143 verbose addRemoteTarball   '698294f0e237889f00e356b993f76d5340fb5615' ]
+144 info retry fetch attempt 1 at 14:26:23
+145 info attempt registry request try #1 at 14:26:23
+146 http fetch GET https://registry.npm.taobao.org/path-extra/download/path-extra-0.1.1.tgz
+147 http fetch 200 https://registry.npm.taobao.org/path-extra/download/path-extra-0.1.1.tgz
+148 silly fetchAndShaCheck shasum 698294f0e237889f00e356b993f76d5340fb5615
+149 verbose addTmpTarball /var/folders/bd/nfr83lw93gx43jwww8tsc80h0000gn/T/npm-76435-b9cbf9b6/registry.npm.taobao.org/path-extra/download/path-extra-0.1.1.tgz not in flight; adding
+150 verbose addTmpTarball already have metadata; skipping unpack for path-extra@0.1.1
+151 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+152 silly cache afterAdd path-extra@0.1.1
+153 verbose afterAdd /Users/zwh/.npm/path-extra/0.1.1/package/package.json not in flight; writing
+154 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+155 verbose afterAdd /Users/zwh/.npm/path-extra/0.1.1/package/package.json written
+156 http 200 https://registry.npm.taobao.org/commander
+157 verbose headers { date: 'Tue, 16 Jan 2018 06:26:25 GMT',
+157 verbose headers   'content-type': 'application/json; charset=utf-8',
+157 verbose headers   'content-length': '94526',
+157 verbose headers   connection: 'keep-alive',
+157 verbose headers   'x-current-requests': '1',
+157 verbose headers   etag: '"1713e-AO8RPj21QJpd9XDWf2b1CzqYiAU"',
+157 verbose headers   'x-readtime': '57' }
+158 silly get cb [ 200,
+158 silly get   { date: 'Tue, 16 Jan 2018 06:26:25 GMT',
+158 silly get     'content-type': 'application/json; charset=utf-8',
+158 silly get     'content-length': '94526',
+158 silly get     connection: 'keep-alive',
+158 silly get     'x-current-requests': '1',
+158 silly get     etag: '"1713e-AO8RPj21QJpd9XDWf2b1CzqYiAU"',
+158 silly get     'x-readtime': '57' } ]
+159 verbose get saving commander to /Users/zwh/.npm/registry.npm.taobao.org/commander/.cache.json
+160 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+161 silly resolveWithNewModule commander@1.3.2 checking installable status
+162 silly cache add args [ 'commander@1.x.x', null ]
+163 verbose cache add spec commander@1.x.x
+164 silly cache add parsed spec Result {
+164 silly cache add   raw: 'commander@1.x.x',
+164 silly cache add   scope: null,
+164 silly cache add   escapedName: 'commander',
+164 silly cache add   name: 'commander',
+164 silly cache add   rawSpec: '1.x.x',
+164 silly cache add   spec: '>=1.0.0 <2.0.0',
+164 silly cache add   type: 'range' }
+165 silly addNamed commander@>=1.0.0 <2.0.0
+166 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for commander
+167 silly addNameRange { name: 'commander', range: '>=1.0.0 <2.0.0', hasData: false }
+168 silly mapToRegistry name commander
+169 silly mapToRegistry using default registry
+170 silly mapToRegistry registry https://registry.npm.taobao.org/
+171 silly mapToRegistry data Result {
+171 silly mapToRegistry   raw: 'commander',
+171 silly mapToRegistry   scope: null,
+171 silly mapToRegistry   escapedName: 'commander',
+171 silly mapToRegistry   name: 'commander',
+171 silly mapToRegistry   rawSpec: '',
+171 silly mapToRegistry   spec: 'latest',
+171 silly mapToRegistry   type: 'tag' }
+172 silly mapToRegistry uri https://registry.npm.taobao.org/commander
+173 verbose addNameRange registry:https://registry.npm.taobao.org/commander not in flight; fetching
+174 verbose get https://registry.npm.taobao.org/commander not expired, no request
+175 silly addNameRange number 2 { name: 'commander', range: '>=1.0.0 <2.0.0', hasData: true }
+176 silly addNameRange versions [ 'commander',
+176 silly addNameRange   [ '2.13.0',
+176 silly addNameRange     '2.12.2',
+176 silly addNameRange     '2.12.1',
+176 silly addNameRange     '2.12.0',
+176 silly addNameRange     '2.11.0',
+176 silly addNameRange     '2.10.0',
+176 silly addNameRange     '2.9.0',
+176 silly addNameRange     '2.8.1',
+176 silly addNameRange     '2.8.0',
+176 silly addNameRange     '2.7.1',
+176 silly addNameRange     '2.7.0',
+176 silly addNameRange     '2.6.0',
+176 silly addNameRange     '2.5.1',
+176 silly addNameRange     '2.5.0',
+176 silly addNameRange     '2.4.0',
+176 silly addNameRange     '2.3.0',
+176 silly addNameRange     '2.2.0',
+176 silly addNameRange     '2.1.0',
+176 silly addNameRange     '2.0.0',
+176 silly addNameRange     '1.3.2',
+176 silly addNameRange     '1.3.1',
+176 silly addNameRange     '1.3.0',
+176 silly addNameRange     '1.2.0',
+176 silly addNameRange     '1.1.1',
+176 silly addNameRange     '1.1.0',
+176 silly addNameRange     '1.0.5',
+176 silly addNameRange     '1.0.4',
+176 silly addNameRange     '1.0.3',
+176 silly addNameRange     '1.0.2',
+176 silly addNameRange     '1.0.1',
+176 silly addNameRange     '1.0.0',
+176 silly addNameRange     '0.5.2',
+176 silly addNameRange     '0.6.1',
+176 silly addNameRange     '0.6.0',
+176 silly addNameRange     '0.5.1',
+176 silly addNameRange     '0.5.0',
+176 silly addNameRange     '0.4.3',
+176 silly addNameRange     '0.4.2',
+176 silly addNameRange     '0.4.1',
+176 silly addNameRange     '0.4.0',
+176 silly addNameRange     '0.3.3',
+176 silly addNameRange     '0.3.2',
+176 silly addNameRange     '0.3.1',
+176 silly addNameRange     '0.3.0',
+176 silly addNameRange     '0.2.1',
+176 silly addNameRange     '0.2.0',
+176 silly addNameRange     '0.1.0',
+176 silly addNameRange     '0.0.5',
+176 silly addNameRange     '0.0.4',
+176 silly addNameRange     '0.0.3',
+176 silly addNameRange     '0.0.1' ] ]
+177 silly addNamed commander@1.3.2
+178 verbose addNamed "1.3.2" is a plain semver version for commander
+179 silly mapToRegistry name commander
+180 silly mapToRegistry using default registry
+181 silly mapToRegistry registry https://registry.npm.taobao.org/
+182 silly mapToRegistry data Result {
+182 silly mapToRegistry   raw: 'commander',
+182 silly mapToRegistry   scope: null,
+182 silly mapToRegistry   escapedName: 'commander',
+182 silly mapToRegistry   name: 'commander',
+182 silly mapToRegistry   rawSpec: '',
+182 silly mapToRegistry   spec: 'latest',
+182 silly mapToRegistry   type: 'tag' }
+183 silly mapToRegistry uri https://registry.npm.taobao.org/commander
+184 verbose addRemoteTarball https://registry.npm.taobao.org/commander/download/commander-1.3.2.tgz not in flight; adding
+185 verbose addRemoteTarball [ 'https://registry.npm.taobao.org/commander/download/commander-1.3.2.tgz',
+185 verbose addRemoteTarball   '8a8f30ec670a6fdd64af52f1914b907d79ead5b5' ]
+186 info retry fetch attempt 1 at 14:26:23
+187 info attempt registry request try #1 at 14:26:23
+188 http fetch GET https://registry.npm.taobao.org/commander/download/commander-1.3.2.tgz
+189 http 200 https://registry.npm.taobao.org/debug
+190 verbose headers { date: 'Tue, 16 Jan 2018 06:26:25 GMT',
+190 verbose headers   'content-type': 'application/json; charset=utf-8',
+190 verbose headers   'content-length': '115857',
+190 verbose headers   connection: 'keep-alive',
+190 verbose headers   'x-current-requests': '1',
+190 verbose headers   vary: 'Origin',
+190 verbose headers   etag: '"1c491-PMLlQ/OhaVy8Tdj3hAuUXDIK+N4"',
+190 verbose headers   'x-readtime': '52' }
+191 silly get cb [ 200,
+191 silly get   { date: 'Tue, 16 Jan 2018 06:26:25 GMT',
+191 silly get     'content-type': 'application/json; charset=utf-8',
+191 silly get     'content-length': '115857',
+191 silly get     connection: 'keep-alive',
+191 silly get     'x-current-requests': '1',
+191 silly get     vary: 'Origin',
+191 silly get     etag: '"1c491-PMLlQ/OhaVy8Tdj3hAuUXDIK+N4"',
+191 silly get     'x-readtime': '52' } ]
+192 verbose get saving debug to /Users/zwh/.npm/registry.npm.taobao.org/debug/.cache.json
+193 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+194 silly resolveWithNewModule debug@0.7.4 checking installable status
+195 silly cache add args [ 'debug@0.7.x', null ]
+196 verbose cache add spec debug@0.7.x
+197 silly cache add parsed spec Result {
+197 silly cache add   raw: 'debug@0.7.x',
+197 silly cache add   scope: null,
+197 silly cache add   escapedName: 'debug',
+197 silly cache add   name: 'debug',
+197 silly cache add   rawSpec: '0.7.x',
+197 silly cache add   spec: '>=0.7.0 <0.8.0',
+197 silly cache add   type: 'range' }
+198 silly addNamed debug@>=0.7.0 <0.8.0
+199 verbose addNamed ">=0.7.0 <0.8.0" is a valid semver range for debug
+200 silly addNameRange { name: 'debug', range: '>=0.7.0 <0.8.0', hasData: false }
+201 silly mapToRegistry name debug
+202 silly mapToRegistry using default registry
+203 silly mapToRegistry registry https://registry.npm.taobao.org/
+204 silly mapToRegistry data Result {
+204 silly mapToRegistry   raw: 'debug',
+204 silly mapToRegistry   scope: null,
+204 silly mapToRegistry   escapedName: 'debug',
+204 silly mapToRegistry   name: 'debug',
+204 silly mapToRegistry   rawSpec: '',
+204 silly mapToRegistry   spec: 'latest',
+204 silly mapToRegistry   type: 'tag' }
+205 silly mapToRegistry uri https://registry.npm.taobao.org/debug
+206 verbose addNameRange registry:https://registry.npm.taobao.org/debug not in flight; fetching
+207 verbose get https://registry.npm.taobao.org/debug not expired, no request
+208 silly addNameRange number 2 { name: 'debug', range: '>=0.7.0 <0.8.0', hasData: true }
+209 silly addNameRange versions [ 'debug',
+209 silly addNameRange   [ '3.1.0',
+209 silly addNameRange     '2.6.9',
+209 silly addNameRange     '3.0.1',
+209 silly addNameRange     '3.0.0',
+209 silly addNameRange     '1.0.5',
+209 silly addNameRange     '2.6.8',
+209 silly addNameRange     '2.6.7',
+209 silly addNameRange     '2.6.6',
+209 silly addNameRange     '2.6.5',
+209 silly addNameRange     '2.6.4',
+209 silly addNameRange     '2.6.3',
+209 silly addNameRange     '2.6.2',
+209 silly addNameRange     '2.6.1',
+209 silly addNameRange     '2.6.0',
+209 silly addNameRange     '2.5.2',
+209 silly addNameRange     '2.5.1',
+209 silly addNameRange     '2.5.0',
+209 silly addNameRange     '2.4.5',
+209 silly addNameRange     '2.4.4',
+209 silly addNameRange     '2.4.3',
+209 silly addNameRange     '2.4.2',
+209 silly addNameRange     '2.4.1',
+209 silly addNameRange     '2.4.0',
+209 silly addNameRange     '2.3.3',
+209 silly addNameRange     '2.3.2',
+209 silly addNameRange     '2.3.1',
+209 silly addNameRange     '2.3.0',
+209 silly addNameRange     '2.2.0',
+209 silly addNameRange     '2.1.3',
+209 silly addNameRange     '2.1.2',
+209 silly addNameRange     '2.1.1',
+209 silly addNameRange     '2.1.0',
+209 silly addNameRange     '2.0.0',
+209 silly addNameRange     '1.0.4',
+209 silly addNameRange     '1.0.3',
+209 silly addNameRange     '1.0.2',
+209 silly addNameRange     '1.0.1',
+209 silly addNameRange     '1.0.0',
+209 silly addNameRange     '0.8.1',
+209 silly addNameRange     '0.8.0',
+209 silly addNameRange     '0.7.4',
+209 silly addNameRange     '0.7.3',
+209 silly addNameRange     '0.7.2',
+209 silly addNameRange     '0.7.1',
+209 silly addNameRange     '0.7.0',
+209 silly addNameRange     '0.6.0',
+209 silly addNameRange     '0.5.0',
+209 silly addNameRange     '0.4.1',
+209 silly addNameRange     '0.4.0',
+209 silly addNameRange     '0.3.0',
+209 silly addNameRange     '0.2.0',
+209 silly addNameRange     '0.1.0',
+209 silly addNameRange     '0.0.1' ] ]
+210 silly addNamed debug@0.7.4
+211 verbose addNamed "0.7.4" is a plain semver version for debug
+212 http fetch 200 https://registry.npm.taobao.org/commander/download/commander-1.3.2.tgz
+213 silly mapToRegistry name debug
+214 silly mapToRegistry using default registry
+215 silly mapToRegistry registry https://registry.npm.taobao.org/
+216 silly mapToRegistry data Result {
+216 silly mapToRegistry   raw: 'debug',
+216 silly mapToRegistry   scope: null,
+216 silly mapToRegistry   escapedName: 'debug',
+216 silly mapToRegistry   name: 'debug',
+216 silly mapToRegistry   rawSpec: '',
+216 silly mapToRegistry   spec: 'latest',
+216 silly mapToRegistry   type: 'tag' }
+217 silly mapToRegistry uri https://registry.npm.taobao.org/debug
+218 verbose addRemoteTarball https://registry.npm.taobao.org/debug/download/debug-0.7.4.tgz not in flight; adding
+219 verbose addRemoteTarball [ 'https://registry.npm.taobao.org/debug/download/debug-0.7.4.tgz',
+219 verbose addRemoteTarball   '06e1ea8082c2cb14e39806e22e2f6f757f92af39' ]
+220 info retry fetch attempt 1 at 14:26:23
+221 info attempt registry request try #1 at 14:26:23
+222 http fetch GET https://registry.npm.taobao.org/debug/download/debug-0.7.4.tgz
+223 silly fetchAndShaCheck shasum 8a8f30ec670a6fdd64af52f1914b907d79ead5b5
+224 verbose addTmpTarball /var/folders/bd/nfr83lw93gx43jwww8tsc80h0000gn/T/npm-76435-b9cbf9b6/registry.npm.taobao.org/commander/download/commander-1.3.2.tgz not in flight; adding
+225 verbose addTmpTarball already have metadata; skipping unpack for commander@1.3.2
+226 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+227 silly cache afterAdd commander@1.3.2
+228 verbose afterAdd /Users/zwh/.npm/commander/1.3.2/package/package.json not in flight; writing
+229 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+230 verbose afterAdd /Users/zwh/.npm/commander/1.3.2/package/package.json written
+231 http fetch 200 https://registry.npm.taobao.org/debug/download/debug-0.7.4.tgz
+232 silly fetchAndShaCheck shasum 06e1ea8082c2cb14e39806e22e2f6f757f92af39
+233 verbose addTmpTarball /var/folders/bd/nfr83lw93gx43jwww8tsc80h0000gn/T/npm-76435-b9cbf9b6/registry.npm.taobao.org/debug/download/debug-0.7.4.tgz not in flight; adding
+234 verbose addTmpTarball already have metadata; skipping unpack for debug@0.7.4
+235 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+236 silly cache afterAdd debug@0.7.4
+237 verbose afterAdd /Users/zwh/.npm/debug/0.7.4/package/package.json not in flight; writing
+238 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+239 verbose afterAdd /Users/zwh/.npm/debug/0.7.4/package/package.json written
+240 http 200 https://registry.npm.taobao.org/aws-sdk
+241 verbose headers { date: 'Tue, 16 Jan 2018 06:26:25 GMT',
+241 verbose headers   'content-type': 'application/json; charset=utf-8',
+241 verbose headers   'content-length': '1726692',
+241 verbose headers   connection: 'keep-alive',
+241 verbose headers   'x-current-requests': '1',
+241 verbose headers   vary: 'Origin',
+241 verbose headers   etag: '"1a58e4-iFMVGXzcVq/E7if5Rh0dNkbmbA8"',
+241 verbose headers   'x-readtime': '140' }
+242 silly get cb [ 200,
+242 silly get   { date: 'Tue, 16 Jan 2018 06:26:25 GMT',
+242 silly get     'content-type': 'application/json; charset=utf-8',
+242 silly get     'content-length': '1726692',
+242 silly get     connection: 'keep-alive',
+242 silly get     'x-current-requests': '1',
+242 silly get     vary: 'Origin',
+242 silly get     etag: '"1a58e4-iFMVGXzcVq/E7if5Rh0dNkbmbA8"',
+242 silly get     'x-readtime': '140' } ]
+243 verbose get saving aws-sdk to /Users/zwh/.npm/registry.npm.taobao.org/aws-sdk/.cache.json
+244 verbose correctMkdir /Users/zwh/.npm correctMkdir not in flight; initializing
+245 silly fetchPackageMetaData Error: No compatible version found: aws-sdk@0.9.x
+245 silly fetchPackageMetaData Valid install targets:
+245 silly fetchPackageMetaData 2.182.0, 2.181.0, 2.180.0, 2.179.0, 2.178.0, 2.177.0, 2.176.0, 2.175.0, 2.174.0, 2.173.0, 2.172.0, 2.171.0, 2.170.0, 2.169.0, 2.168.0, 2.167.0, 2.166.0, 2.165.0, 2.164.0, 2.163.0, 2.162.0, 2.161.0, 2.160.0, 2.159.0, 2.158.0, 2.157.0, 2.156.0, 2.155.0, 2.154.0, 2.153.0, 2.152.0, 2.151.0, 2.150.0, 2.149.0, 2.148.0, 2.147.0, 2.146.0, 2.145.0, 2.144.0, 2.143.0, 2.142.0, 2.141.0, 2.140.0, 2.139.0, 2.138.0, 2.137.0, 2.136.0, 2.135.0, 2.134.0, 2.133.0, 2.132.0, 2.131.0, 2.130.0, 2.129.0, 2.128.0, 2.127.0, 2.126.0, 2.125.0, 2.124.0, 2.123.0, 2.122.0, 2.121.0, 2.120.0, 2.119.0, 2.118.0, 2.117.0, 2.116.0, 2.115.0, 2.114.0, 2.113.0, 2.112.0, 2.111.0, 2.110.0, 2.109.0, 2.108.0, 2.107.0, 2.106.0, 2.105.0, 2.104.0, 2.103.0, 2.102.0, 2.101.0, 2.100.0, 2.99.0, 2.98.0, 2.97.0, 2.96.0, 2.95.0, 2.94.0, 2.93.0, 2.92.0, 2.91.0, 2.90.0, 2.89.0, 2.88.0, 2.87.0, 2.86.0, 2.85.0, 2.84.0, 2.83.0, 2.82.0, 2.81.0, 2.80.0, 2.79.0, 2.78.0, 2.77.0, 2.76.0, 2.75.0, 2.74.0, 2.73.0, 2.72.0, 2.71.0, 2.70.0, 2.69.0, 2.68.0, 2.67.0, 2.66.0, 2.65.0, 2.64.0, 2.63.0, 2.62.0, 2.61.0, 2.60.0, 2.59.0, 2.58.0, 2.57.0, 2.56.0, 2.55.0, 2.54.0, 2.53.0, 2.52.0, 2.51.0, 2.50.0, 2.49.0, 2.48.0, 2.47.0, 2.46.0, 2.45.0, 2.44.0, 2.43.0, 2.42.0, 2.41.0, 2.40.0, 2.39.0, 2.38.0, 2.37.0, 2.36.0, 2.35.0, 2.34.0, 2.33.0, 2.32.0, 2.31.0, 2.30.0, 2.29.0, 2.28.0, 2.27.0, 2.26.0, 2.25.0, 2.24.0, 2.23.0, 2.22.0, 2.21.0, 2.20.0, 2.19.0, 2.18.0, 2.17.0, 2.16.0, 2.15.0, 2.14.0, 2.13.0, 2.12.0, 2.11.0, 2.10.0, 2.9.0, 2.8.0, 2.7.28, 2.7.27, 2.7.26, 2.7.25, 2.7.24, 2.7.23, 2.7.22, 2.7.21, 2.7.20, 2.7.19, 2.7.18, 2.7.17, 2.7.16, 2.7.15, 2.7.14, 2.7.13, 2.7.12, 2.7.11, 2.7.10, 2.7.9, 2.7.8, 2.7.7, 2.7.6, 2.7.5, 2.7.4, 2.7.3, 2.7.2, 2.7.1, 2.7.0, 2.6.15, 2.6.14, 2.6.13, 2.6.12, 2.6.11, 2.6.10, 2.6.9, 2.6.8, 2.6.7, 2.6.6, 2.6.5, 2.6.4, 2.6.3, 2.6.2, 2.6.1, 2.6.0, 2.5.6, 2.5.5, 2.5.4, 2.5.3, 2.5.2, 2.5.1, 2.5.0, 2.4.14, 2.4.13, 2.4.12, 2.4.11, 2.4.10, 2.4.9, 2.4.8, 2.4.7, 2.4.6, 2.4.5, 2.4.4, 2.4.3, 2.4.2, 2.4.1, 2.4.0, 2.3.19, 2.3.18, 2.3.17, 2.3.16, 2.3.15, 2.3.14, 2.3.13, 2.3.12, 2.3.11, 2.3.10, 2.3.9, 2.3.8, 2.3.7, 2.3.6, 2.3.5, 2.3.4, 2.3.3, 2.3.2, 2.3.1, 2.3.0, 2.2.48, 2.2.47, 2.2.46, 2.2.45, 2.2.44, 2.2.43, 2.2.42, 2.2.41, 2.2.40, 2.2.39, 2.2.38, 2.2.37, 2.2.36, 2.2.35, 2.2.34, 2.2.33, 2.2.32, 2.2.31, 2.2.30, 2.2.29, 2.2.28, 2.2.27, 2.2.26, 2.2.25, 2.2.24, 2.2.23, 2.2.22, 2.2.21, 2.2.20, 2.2.19, 2.2.18, 2.2.17, 2.2.16, 2.2.15, 2.2.14, 2.2.13, 2.2.12, 2.2.11, 2.2.10, 2.2.9, 2.2.8, 2.2.7, 2.2.6, 2.2.5, 2.2.4, 2.2.3, 2.2.2, 2.2.1, 2.2.0, 2.1.50, 2.1.49, 2.1.48, 2.1.47, 2.1.46, 2.1.45, 2.1.44, 2.1.43, 2.1.42, 2.1.41, 2.1.40, 2.1.39, 2.1.38, 2.1.37, 2.1.36, 2.1.35, 2.1.34, 2.1.33, 2.1.32, 2.1.31, 2.1.30, 2.1.29, 2.1.28, 2.1.27, 2.1.26, 2.1.25, 2.1.24, 2.1.23, 2.1.22, 2.1.21, 2.1.20, 2.1.19, 2.1.18, 2.1.17, 2.1.16, 2.1.15, 2.1.14, 2.1.13, 2.1.12, 2.1.11, 2.1.10, 2.1.9, 2.1.8, 2.1.7, 2.1.6, 2.1.5, 2.1.4, 2.1.3, 2.1.2, 2.1.1, 2.1.0, 2.0.31, 2.0.30, 2.0.29, 2.0.28, 2.0.27, 2.0.26, 2.0.25, 2.0.24, 2.0.23, 2.0.22, 2.0.21, 2.0.19, 2.0.18, 2.0.17, 2.0.16, 2.0.15, 2.0.14, 2.0.13, 2.0.12, 2.0.11, 2.0.10, 2.0.9, 2.0.8, 2.0.7, 2.0.6, 2.0.5, 2.0.4, 2.0.3, 2.0.2, 2.0.1, 2.0.0-rc9, 2.0.0-rc8, 2.0.0-rc7, 2.0.0-rc6, 2.0.0-rc5, 2.0.0-rc4, 2.0.0-rc3, 2.0.0-rc2, 2.0.0-rc13, 2.0.0-rc12, 2.0.0-rc11, 2.0.0-rc10, 2.0.0-rc1, 2.0.0-rc.20, 2.0.0-rc.19, 2.0.0-rc.18, 2.0.0-rc.17, 2.0.0-rc.16, 2.0.0-rc.15, 2.0.0-rc.14, 1.18.0, 1.17.3, 1.17.2, 1.17.1, 1.17.0, 1.16.0, 1.15.0, 1.14.0, 1.13.0, 1.12.0, 1.10.0, 1.9.0, 1.8.1, 1.8.0, 1.7.1, 1.7.0, 1.6.0, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.2, 1.3.1, 1.3.0, 1.2.0, 1.1.0, 1.0.0, 0.9.9-pre.10, 0.9.8-pre.9, 0.9.7-pre.8, 0.9.6-pre.7, 0.9.5-pre.6, 0.9.4-pre.5, 0.9.3-pre.4, 0.9.2-pre.3, 0.9.1-pre.2, 0.9.0-pre.1
+245 silly fetchPackageMetaData
+245 silly fetchPackageMetaData     at pickVersionFromRegistryDocument (/usr/local/lib/node_modules/npm/lib/fetch-package-metadata.js:178:16)
+245 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:13:50
+245 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/lib/utils/pulse-till-done.js:20:8
+245 silly fetchPackageMetaData     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:174:7)
+245 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:241:18
+245 silly fetchPackageMetaData     at FSReqWrap.oncomplete (fs.js:123:15)
+245 silly fetchPackageMetaData  error for aws-sdk@0.9.x { Error: No compatible version found: aws-sdk@0.9.x
+245 silly fetchPackageMetaData Valid install targets:
+245 silly fetchPackageMetaData 2.182.0, 2.181.0, 2.180.0, 2.179.0, 2.178.0, 2.177.0, 2.176.0, 2.175.0, 2.174.0, 2.173.0, 2.172.0, 2.171.0, 2.170.0, 2.169.0, 2.168.0, 2.167.0, 2.166.0, 2.165.0, 2.164.0, 2.163.0, 2.162.0, 2.161.0, 2.160.0, 2.159.0, 2.158.0, 2.157.0, 2.156.0, 2.155.0, 2.154.0, 2.153.0, 2.152.0, 2.151.0, 2.150.0, 2.149.0, 2.148.0, 2.147.0, 2.146.0, 2.145.0, 2.144.0, 2.143.0, 2.142.0, 2.141.0, 2.140.0, 2.139.0, 2.138.0, 2.137.0, 2.136.0, 2.135.0, 2.134.0, 2.133.0, 2.132.0, 2.131.0, 2.130.0, 2.129.0, 2.128.0, 2.127.0, 2.126.0, 2.125.0, 2.124.0, 2.123.0, 2.122.0, 2.121.0, 2.120.0, 2.119.0, 2.118.0, 2.117.0, 2.116.0, 2.115.0, 2.114.0, 2.113.0, 2.112.0, 2.111.0, 2.110.0, 2.109.0, 2.108.0, 2.107.0, 2.106.0, 2.105.0, 2.104.0, 2.103.0, 2.102.0, 2.101.0, 2.100.0, 2.99.0, 2.98.0, 2.97.0, 2.96.0, 2.95.0, 2.94.0, 2.93.0, 2.92.0, 2.91.0, 2.90.0, 2.89.0, 2.88.0, 2.87.0, 2.86.0, 2.85.0, 2.84.0, 2.83.0, 2.82.0, 2.81.0, 2.80.0, 2.79.0, 2.78.0, 2.77.0, 2.76.0, 2.75.0, 2.74.0, 2.73.0, 2.72.0, 2.71.0, 2.70.0, 2.69.0, 2.68.0, 2.67.0, 2.66.0, 2.65.0, 2.64.0, 2.63.0, 2.62.0, 2.61.0, 2.60.0, 2.59.0, 2.58.0, 2.57.0, 2.56.0, 2.55.0, 2.54.0, 2.53.0, 2.52.0, 2.51.0, 2.50.0, 2.49.0, 2.48.0, 2.47.0, 2.46.0, 2.45.0, 2.44.0, 2.43.0, 2.42.0, 2.41.0, 2.40.0, 2.39.0, 2.38.0, 2.37.0, 2.36.0, 2.35.0, 2.34.0, 2.33.0, 2.32.0, 2.31.0, 2.30.0, 2.29.0, 2.28.0, 2.27.0, 2.26.0, 2.25.0, 2.24.0, 2.23.0, 2.22.0, 2.21.0, 2.20.0, 2.19.0, 2.18.0, 2.17.0, 2.16.0, 2.15.0, 2.14.0, 2.13.0, 2.12.0, 2.11.0, 2.10.0, 2.9.0, 2.8.0, 2.7.28, 2.7.27, 2.7.26, 2.7.25, 2.7.24, 2.7.23, 2.7.22, 2.7.21, 2.7.20, 2.7.19, 2.7.18, 2.7.17, 2.7.16, 2.7.15, 2.7.14, 2.7.13, 2.7.12, 2.7.11, 2.7.10, 2.7.9, 2.7.8, 2.7.7, 2.7.6, 2.7.5, 2.7.4, 2.7.3, 2.7.2, 2.7.1, 2.7.0, 2.6.15, 2.6.14, 2.6.13, 2.6.12, 2.6.11, 2.6.10, 2.6.9, 2.6.8, 2.6.7, 2.6.6, 2.6.5, 2.6.4, 2.6.3, 2.6.2, 2.6.1, 2.6.0, 2.5.6, 2.5.5, 2.5.4, 2.5.3, 2.5.2, 2.5.1, 2.5.0, 2.4.14, 2.4.13, 2.4.12, 2.4.11, 2.4.10, 2.4.9, 2.4.8, 2.4.7, 2.4.6, 2.4.5, 2.4.4, 2.4.3, 2.4.2, 2.4.1, 2.4.0, 2.3.19, 2.3.18, 2.3.17, 2.3.16, 2.3.15, 2.3.14, 2.3.13, 2.3.12, 2.3.11, 2.3.10, 2.3.9, 2.3.8, 2.3.7, 2.3.6, 2.3.5, 2.3.4, 2.3.3, 2.3.2, 2.3.1, 2.3.0, 2.2.48, 2.2.47, 2.2.46, 2.2.45, 2.2.44, 2.2.43, 2.2.42, 2.2.41, 2.2.40, 2.2.39, 2.2.38, 2.2.37, 2.2.36, 2.2.35, 2.2.34, 2.2.33, 2.2.32, 2.2.31, 2.2.30, 2.2.29, 2.2.28, 2.2.27, 2.2.26, 2.2.25, 2.2.24, 2.2.23, 2.2.22, 2.2.21, 2.2.20, 2.2.19, 2.2.18, 2.2.17, 2.2.16, 2.2.15, 2.2.14, 2.2.13, 2.2.12, 2.2.11, 2.2.10, 2.2.9, 2.2.8, 2.2.7, 2.2.6, 2.2.5, 2.2.4, 2.2.3, 2.2.2, 2.2.1, 2.2.0, 2.1.50, 2.1.49, 2.1.48, 2.1.47, 2.1.46, 2.1.45, 2.1.44, 2.1.43, 2.1.42, 2.1.41, 2.1.40, 2.1.39, 2.1.38, 2.1.37, 2.1.36, 2.1.35, 2.1.34, 2.1.33, 2.1.32, 2.1.31, 2.1.30, 2.1.29, 2.1.28, 2.1.27, 2.1.26, 2.1.25, 2.1.24, 2.1.23, 2.1.22, 2.1.21, 2.1.20, 2.1.19, 2.1.18, 2.1.17, 2.1.16, 2.1.15, 2.1.14, 2.1.13, 2.1.12, 2.1.11, 2.1.10, 2.1.9, 2.1.8, 2.1.7, 2.1.6, 2.1.5, 2.1.4, 2.1.3, 2.1.2, 2.1.1, 2.1.0, 2.0.31, 2.0.30, 2.0.29, 2.0.28, 2.0.27, 2.0.26, 2.0.25, 2.0.24, 2.0.23, 2.0.22, 2.0.21, 2.0.19, 2.0.18, 2.0.17, 2.0.16, 2.0.15, 2.0.14, 2.0.13, 2.0.12, 2.0.11, 2.0.10, 2.0.9, 2.0.8, 2.0.7, 2.0.6, 2.0.5, 2.0.4, 2.0.3, 2.0.2, 2.0.1, 2.0.0-rc9, 2.0.0-rc8, 2.0.0-rc7, 2.0.0-rc6, 2.0.0-rc5, 2.0.0-rc4, 2.0.0-rc3, 2.0.0-rc2, 2.0.0-rc13, 2.0.0-rc12, 2.0.0-rc11, 2.0.0-rc10, 2.0.0-rc1, 2.0.0-rc.20, 2.0.0-rc.19, 2.0.0-rc.18, 2.0.0-rc.17, 2.0.0-rc.16, 2.0.0-rc.15, 2.0.0-rc.14, 1.18.0, 1.17.3, 1.17.2, 1.17.1, 1.17.0, 1.16.0, 1.15.0, 1.14.0, 1.13.0, 1.12.0, 1.10.0, 1.9.0, 1.8.1, 1.8.0, 1.7.1, 1.7.0, 1.6.0, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.2, 1.3.1, 1.3.0, 1.2.0, 1.1.0, 1.0.0, 0.9.9-pre.10, 0.9.8-pre.9, 0.9.7-pre.8, 0.9.6-pre.7, 0.9.5-pre.6, 0.9.4-pre.5, 0.9.3-pre.4, 0.9.2-pre.3, 0.9.1-pre.2, 0.9.0-pre.1
+245 silly fetchPackageMetaData
+245 silly fetchPackageMetaData     at pickVersionFromRegistryDocument (/usr/local/lib/node_modules/npm/lib/fetch-package-metadata.js:178:16)
+245 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:13:50
+245 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/lib/utils/pulse-till-done.js:20:8
+245 silly fetchPackageMetaData     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:174:7)
+245 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:241:18
+245 silly fetchPackageMetaData     at FSReqWrap.oncomplete (fs.js:123:15) code: 'ETARGET' }
+246 silly rollbackFailedOptional Starting
+247 silly rollbackFailedOptional Finishing
+248 silly runTopLevelLifecycles Finishing
+249 silly install printInstalled
+250 verbose stack Error: No compatible version found: aws-sdk@0.9.x
+250 verbose stack Valid install targets:
+250 verbose stack 2.182.0, 2.181.0, 2.180.0, 2.179.0, 2.178.0, 2.177.0, 2.176.0, 2.175.0, 2.174.0, 2.173.0, 2.172.0, 2.171.0, 2.170.0, 2.169.0, 2.168.0, 2.167.0, 2.166.0, 2.165.0, 2.164.0, 2.163.0, 2.162.0, 2.161.0, 2.160.0, 2.159.0, 2.158.0, 2.157.0, 2.156.0, 2.155.0, 2.154.0, 2.153.0, 2.152.0, 2.151.0, 2.150.0, 2.149.0, 2.148.0, 2.147.0, 2.146.0, 2.145.0, 2.144.0, 2.143.0, 2.142.0, 2.141.0, 2.140.0, 2.139.0, 2.138.0, 2.137.0, 2.136.0, 2.135.0, 2.134.0, 2.133.0, 2.132.0, 2.131.0, 2.130.0, 2.129.0, 2.128.0, 2.127.0, 2.126.0, 2.125.0, 2.124.0, 2.123.0, 2.122.0, 2.121.0, 2.120.0, 2.119.0, 2.118.0, 2.117.0, 2.116.0, 2.115.0, 2.114.0, 2.113.0, 2.112.0, 2.111.0, 2.110.0, 2.109.0, 2.108.0, 2.107.0, 2.106.0, 2.105.0, 2.104.0, 2.103.0, 2.102.0, 2.101.0, 2.100.0, 2.99.0, 2.98.0, 2.97.0, 2.96.0, 2.95.0, 2.94.0, 2.93.0, 2.92.0, 2.91.0, 2.90.0, 2.89.0, 2.88.0, 2.87.0, 2.86.0, 2.85.0, 2.84.0, 2.83.0, 2.82.0, 2.81.0, 2.80.0, 2.79.0, 2.78.0, 2.77.0, 2.76.0, 2.75.0, 2.74.0, 2.73.0, 2.72.0, 2.71.0, 2.70.0, 2.69.0, 2.68.0, 2.67.0, 2.66.0, 2.65.0, 2.64.0, 2.63.0, 2.62.0, 2.61.0, 2.60.0, 2.59.0, 2.58.0, 2.57.0, 2.56.0, 2.55.0, 2.54.0, 2.53.0, 2.52.0, 2.51.0, 2.50.0, 2.49.0, 2.48.0, 2.47.0, 2.46.0, 2.45.0, 2.44.0, 2.43.0, 2.42.0, 2.41.0, 2.40.0, 2.39.0, 2.38.0, 2.37.0, 2.36.0, 2.35.0, 2.34.0, 2.33.0, 2.32.0, 2.31.0, 2.30.0, 2.29.0, 2.28.0, 2.27.0, 2.26.0, 2.25.0, 2.24.0, 2.23.0, 2.22.0, 2.21.0, 2.20.0, 2.19.0, 2.18.0, 2.17.0, 2.16.0, 2.15.0, 2.14.0, 2.13.0, 2.12.0, 2.11.0, 2.10.0, 2.9.0, 2.8.0, 2.7.28, 2.7.27, 2.7.26, 2.7.25, 2.7.24, 2.7.23, 2.7.22, 2.7.21, 2.7.20, 2.7.19, 2.7.18, 2.7.17, 2.7.16, 2.7.15, 2.7.14, 2.7.13, 2.7.12, 2.7.11, 2.7.10, 2.7.9, 2.7.8, 2.7.7, 2.7.6, 2.7.5, 2.7.4, 2.7.3, 2.7.2, 2.7.1, 2.7.0, 2.6.15, 2.6.14, 2.6.13, 2.6.12, 2.6.11, 2.6.10, 2.6.9, 2.6.8, 2.6.7, 2.6.6, 2.6.5, 2.6.4, 2.6.3, 2.6.2, 2.6.1, 2.6.0, 2.5.6, 2.5.5, 2.5.4, 2.5.3, 2.5.2, 2.5.1, 2.5.0, 2.4.14, 2.4.13, 2.4.12, 2.4.11, 2.4.10, 2.4.9, 2.4.8, 2.4.7, 2.4.6, 2.4.5, 2.4.4, 2.4.3, 2.4.2, 2.4.1, 2.4.0, 2.3.19, 2.3.18, 2.3.17, 2.3.16, 2.3.15, 2.3.14, 2.3.13, 2.3.12, 2.3.11, 2.3.10, 2.3.9, 2.3.8, 2.3.7, 2.3.6, 2.3.5, 2.3.4, 2.3.3, 2.3.2, 2.3.1, 2.3.0, 2.2.48, 2.2.47, 2.2.46, 2.2.45, 2.2.44, 2.2.43, 2.2.42, 2.2.41, 2.2.40, 2.2.39, 2.2.38, 2.2.37, 2.2.36, 2.2.35, 2.2.34, 2.2.33, 2.2.32, 2.2.31, 2.2.30, 2.2.29, 2.2.28, 2.2.27, 2.2.26, 2.2.25, 2.2.24, 2.2.23, 2.2.22, 2.2.21, 2.2.20, 2.2.19, 2.2.18, 2.2.17, 2.2.16, 2.2.15, 2.2.14, 2.2.13, 2.2.12, 2.2.11, 2.2.10, 2.2.9, 2.2.8, 2.2.7, 2.2.6, 2.2.5, 2.2.4, 2.2.3, 2.2.2, 2.2.1, 2.2.0, 2.1.50, 2.1.49, 2.1.48, 2.1.47, 2.1.46, 2.1.45, 2.1.44, 2.1.43, 2.1.42, 2.1.41, 2.1.40, 2.1.39, 2.1.38, 2.1.37, 2.1.36, 2.1.35, 2.1.34, 2.1.33, 2.1.32, 2.1.31, 2.1.30, 2.1.29, 2.1.28, 2.1.27, 2.1.26, 2.1.25, 2.1.24, 2.1.23, 2.1.22, 2.1.21, 2.1.20, 2.1.19, 2.1.18, 2.1.17, 2.1.16, 2.1.15, 2.1.14, 2.1.13, 2.1.12, 2.1.11, 2.1.10, 2.1.9, 2.1.8, 2.1.7, 2.1.6, 2.1.5, 2.1.4, 2.1.3, 2.1.2, 2.1.1, 2.1.0, 2.0.31, 2.0.30, 2.0.29, 2.0.28, 2.0.27, 2.0.26, 2.0.25, 2.0.24, 2.0.23, 2.0.22, 2.0.21, 2.0.19, 2.0.18, 2.0.17, 2.0.16, 2.0.15, 2.0.14, 2.0.13, 2.0.12, 2.0.11, 2.0.10, 2.0.9, 2.0.8, 2.0.7, 2.0.6, 2.0.5, 2.0.4, 2.0.3, 2.0.2, 2.0.1, 2.0.0-rc9, 2.0.0-rc8, 2.0.0-rc7, 2.0.0-rc6, 2.0.0-rc5, 2.0.0-rc4, 2.0.0-rc3, 2.0.0-rc2, 2.0.0-rc13, 2.0.0-rc12, 2.0.0-rc11, 2.0.0-rc10, 2.0.0-rc1, 2.0.0-rc.20, 2.0.0-rc.19, 2.0.0-rc.18, 2.0.0-rc.17, 2.0.0-rc.16, 2.0.0-rc.15, 2.0.0-rc.14, 1.18.0, 1.17.3, 1.17.2, 1.17.1, 1.17.0, 1.16.0, 1.15.0, 1.14.0, 1.13.0, 1.12.0, 1.10.0, 1.9.0, 1.8.1, 1.8.0, 1.7.1, 1.7.0, 1.6.0, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.2, 1.3.1, 1.3.0, 1.2.0, 1.1.0, 1.0.0, 0.9.9-pre.10, 0.9.8-pre.9, 0.9.7-pre.8, 0.9.6-pre.7, 0.9.5-pre.6, 0.9.4-pre.5, 0.9.3-pre.4, 0.9.2-pre.3, 0.9.1-pre.2, 0.9.0-pre.1
+250 verbose stack
+250 verbose stack     at pickVersionFromRegistryDocument (/usr/local/lib/node_modules/npm/lib/fetch-package-metadata.js:178:16)
+250 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:13:50
+250 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/pulse-till-done.js:20:8
+250 verbose stack     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:174:7)
+250 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:241:18
+250 verbose stack     at FSReqWrap.oncomplete (fs.js:123:15)
+251 verbose cwd /Users/zwh/work/git/vue-calendar
+252 error Darwin 16.6.0
+253 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "parcel"
+254 error node v6.12.0
+255 error npm  v3.10.10
+256 error code ETARGET
+257 error notarget No compatible version found: aws-sdk@0.9.x
+257 error notarget Valid install targets:
+257 error notarget 2.182.0, 2.181.0, 2.180.0, 2.179.0, 2.178.0, 2.177.0, 2.176.0, 2.175.0, 2.174.0, 2.173.0, 2.172.0, 2.171.0, 2.170.0, 2.169.0, 2.168.0, 2.167.0, 2.166.0, 2.165.0, 2.164.0, 2.163.0, 2.162.0, 2.161.0, 2.160.0, 2.159.0, 2.158.0, 2.157.0, 2.156.0, 2.155.0, 2.154.0, 2.153.0, 2.152.0, 2.151.0, 2.150.0, 2.149.0, 2.148.0, 2.147.0, 2.146.0, 2.145.0, 2.144.0, 2.143.0, 2.142.0, 2.141.0, 2.140.0, 2.139.0, 2.138.0, 2.137.0, 2.136.0, 2.135.0, 2.134.0, 2.133.0, 2.132.0, 2.131.0, 2.130.0, 2.129.0, 2.128.0, 2.127.0, 2.126.0, 2.125.0, 2.124.0, 2.123.0, 2.122.0, 2.121.0, 2.120.0, 2.119.0, 2.118.0, 2.117.0, 2.116.0, 2.115.0, 2.114.0, 2.113.0, 2.112.0, 2.111.0, 2.110.0, 2.109.0, 2.108.0, 2.107.0, 2.106.0, 2.105.0, 2.104.0, 2.103.0, 2.102.0, 2.101.0, 2.100.0, 2.99.0, 2.98.0, 2.97.0, 2.96.0, 2.95.0, 2.94.0, 2.93.0, 2.92.0, 2.91.0, 2.90.0, 2.89.0, 2.88.0, 2.87.0, 2.86.0, 2.85.0, 2.84.0, 2.83.0, 2.82.0, 2.81.0, 2.80.0, 2.79.0, 2.78.0, 2.77.0, 2.76.0, 2.75.0, 2.74.0, 2.73.0, 2.72.0, 2.71.0, 2.70.0, 2.69.0, 2.68.0, 2.67.0, 2.66.0, 2.65.0, 2.64.0, 2.63.0, 2.62.0, 2.61.0, 2.60.0, 2.59.0, 2.58.0, 2.57.0, 2.56.0, 2.55.0, 2.54.0, 2.53.0, 2.52.0, 2.51.0, 2.50.0, 2.49.0, 2.48.0, 2.47.0, 2.46.0, 2.45.0, 2.44.0, 2.43.0, 2.42.0, 2.41.0, 2.40.0, 2.39.0, 2.38.0, 2.37.0, 2.36.0, 2.35.0, 2.34.0, 2.33.0, 2.32.0, 2.31.0, 2.30.0, 2.29.0, 2.28.0, 2.27.0, 2.26.0, 2.25.0, 2.24.0, 2.23.0, 2.22.0, 2.21.0, 2.20.0, 2.19.0, 2.18.0, 2.17.0, 2.16.0, 2.15.0, 2.14.0, 2.13.0, 2.12.0, 2.11.0, 2.10.0, 2.9.0, 2.8.0, 2.7.28, 2.7.27, 2.7.26, 2.7.25, 2.7.24, 2.7.23, 2.7.22, 2.7.21, 2.7.20, 2.7.19, 2.7.18, 2.7.17, 2.7.16, 2.7.15, 2.7.14, 2.7.13, 2.7.12, 2.7.11, 2.7.10, 2.7.9, 2.7.8, 2.7.7, 2.7.6, 2.7.5, 2.7.4, 2.7.3, 2.7.2, 2.7.1, 2.7.0, 2.6.15, 2.6.14, 2.6.13, 2.6.12, 2.6.11, 2.6.10, 2.6.9, 2.6.8, 2.6.7, 2.6.6, 2.6.5, 2.6.4, 2.6.3, 2.6.2, 2.6.1, 2.6.0, 2.5.6, 2.5.5, 2.5.4, 2.5.3, 2.5.2, 2.5.1, 2.5.0, 2.4.14, 2.4.13, 2.4.12, 2.4.11, 2.4.10, 2.4.9, 2.4.8, 2.4.7, 2.4.6, 2.4.5, 2.4.4, 2.4.3, 2.4.2, 2.4.1, 2.4.0, 2.3.19, 2.3.18, 2.3.17, 2.3.16, 2.3.15, 2.3.14, 2.3.13, 2.3.12, 2.3.11, 2.3.10, 2.3.9, 2.3.8, 2.3.7, 2.3.6, 2.3.5, 2.3.4, 2.3.3, 2.3.2, 2.3.1, 2.3.0, 2.2.48, 2.2.47, 2.2.46, 2.2.45, 2.2.44, 2.2.43, 2.2.42, 2.2.41, 2.2.40, 2.2.39, 2.2.38, 2.2.37, 2.2.36, 2.2.35, 2.2.34, 2.2.33, 2.2.32, 2.2.31, 2.2.30, 2.2.29, 2.2.28, 2.2.27, 2.2.26, 2.2.25, 2.2.24, 2.2.23, 2.2.22, 2.2.21, 2.2.20, 2.2.19, 2.2.18, 2.2.17, 2.2.16, 2.2.15, 2.2.14, 2.2.13, 2.2.12, 2.2.11, 2.2.10, 2.2.9, 2.2.8, 2.2.7, 2.2.6, 2.2.5, 2.2.4, 2.2.3, 2.2.2, 2.2.1, 2.2.0, 2.1.50, 2.1.49, 2.1.48, 2.1.47, 2.1.46, 2.1.45, 2.1.44, 2.1.43, 2.1.42, 2.1.41, 2.1.40, 2.1.39, 2.1.38, 2.1.37, 2.1.36, 2.1.35, 2.1.34, 2.1.33, 2.1.32, 2.1.31, 2.1.30, 2.1.29, 2.1.28, 2.1.27, 2.1.26, 2.1.25, 2.1.24, 2.1.23, 2.1.22, 2.1.21, 2.1.20, 2.1.19, 2.1.18, 2.1.17, 2.1.16, 2.1.15, 2.1.14, 2.1.13, 2.1.12, 2.1.11, 2.1.10, 2.1.9, 2.1.8, 2.1.7, 2.1.6, 2.1.5, 2.1.4, 2.1.3, 2.1.2, 2.1.1, 2.1.0, 2.0.31, 2.0.30, 2.0.29, 2.0.28, 2.0.27, 2.0.26, 2.0.25, 2.0.24, 2.0.23, 2.0.22, 2.0.21, 2.0.19, 2.0.18, 2.0.17, 2.0.16, 2.0.15, 2.0.14, 2.0.13, 2.0.12, 2.0.11, 2.0.10, 2.0.9, 2.0.8, 2.0.7, 2.0.6, 2.0.5, 2.0.4, 2.0.3, 2.0.2, 2.0.1, 2.0.0-rc9, 2.0.0-rc8, 2.0.0-rc7, 2.0.0-rc6, 2.0.0-rc5, 2.0.0-rc4, 2.0.0-rc3, 2.0.0-rc2, 2.0.0-rc13, 2.0.0-rc12, 2.0.0-rc11, 2.0.0-rc10, 2.0.0-rc1, 2.0.0-rc.20, 2.0.0-rc.19, 2.0.0-rc.18, 2.0.0-rc.17, 2.0.0-rc.16, 2.0.0-rc.15, 2.0.0-rc.14, 1.18.0, 1.17.3, 1.17.2, 1.17.1, 1.17.0, 1.16.0, 1.15.0, 1.14.0, 1.13.0, 1.12.0, 1.10.0, 1.9.0, 1.8.1, 1.8.0, 1.7.1, 1.7.0, 1.6.0, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.2, 1.3.1, 1.3.0, 1.2.0, 1.1.0, 1.0.0, 0.9.9-pre.10, 0.9.8-pre.9, 0.9.7-pre.8, 0.9.6-pre.7, 0.9.5-pre.6, 0.9.4-pre.5, 0.9.3-pre.4, 0.9.2-pre.3, 0.9.1-pre.2, 0.9.0-pre.1
+258 error notarget This is most likely not a problem with npm itself.
+258 error notarget In most cases you or one of your dependencies are requesting
+258 error notarget a package version that doesn't exist.
+258 error notarget
+258 error notarget It was specified as a dependency of 'parcel'
+259 verbose exit [ 1, true ]
