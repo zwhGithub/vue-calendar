@@ -6,9 +6,9 @@
 * Github上太多一个输入框点击弹出日历选择某个时间的组件，却没有找到适合一个单纯展示日历并且能点击获取时间的组件
 * 少部分日历组件的占用内存过于大，对于日历这样简单的功能来说显然不够合理
 
-## Demo 
+## Demo
 
-![效果](https://zwhgithub.github.io/vue-calendar/dist/1510652959.png)                 [或者请用浏览器的手机模式查看](https://zwhgithub.github.io/vue-calendar/dist/#/) 
+![效果](https://zwhgithub.github.io/vue-calendar/dist/1510652959.png)                 [或者请用浏览器的手机模式查看](https://zwhgithub.github.io/vue-calendar/dist/#/)
 
 ## 效果
  ![效果](https://qiniu.epipe.cn/5465939501580804096?imageView2/1/w/290/h/470)
@@ -28,23 +28,25 @@ cnpm i vue-calendar-component --save  //国内镜像
 import Calendar from 'vue-calendar-component';
 Vue.use(Calendar);
 
-<Calendar 
-    v-on:chose_day="clickday" 
-    v-on:is_today="clicktoday" 
-    v-on:change_month="change_date" 
-    :mark_array=[1,2] 
-    :is_hide_otherday=false>
-		</Calendar>
+    <Calendar
+      v-on:choseDay="clickDay"
+      v-on:isToday="clickToday"
+      v-on:changeMonth="changeDate"
+      :markArray=[20,21] //标记的日期
+      // :isHideOtherday=false  //超过今天也不允许点击
+      // :ageDayHide='1514937600000' //某个时间戳以前的不允许点击
+    ></Calendar>
 
-      clickday(data){
-        console.log(data) //选中某天
-      },
-      change_date(data){
-        console.log(data)  //左右点击切换月份
-      },
-      clicktoday(data){
-        console.log(data)  //切换月份的时候，如果切到当前月份,调用这个方法
-      }
+
+    clickDay(data) {
+      console.log(data); //选中某天
+    },
+    clickToday(data) {
+      console.log(data); //跳到了本月
+    },
+    changeDate(data) {
+      console.log(data); //左右点击切换月份
+    }
 
 ```
 
@@ -56,6 +58,7 @@ Vue.use(Calendar);
 | is_today         | 切换月份的时候，如果切到当前月份，调用这个方法，返回当前月今天          |   无   |  否   |
 | mark_array       | 如果需要某月的几天被标注，传当月的日期数组。如[2,6,8]当月2号6号8号被会标注 |  空数组  |  否   |
 | is_hide_otherday | 超过今天的日期是否可以被点击，true是不可以点击，false是可以点击     | false |  否   |
+| ageDayHide | 某个时间戳以前不允许点击  时间戳长度是13位   | 0 |  否   |
 
 ## Other
 * src下面的App.vue 有demo可以参考.
