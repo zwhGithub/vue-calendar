@@ -118,7 +118,7 @@
         <div class="wh_content_item" v-for="(item,index) in list" @click="clickDay(item,index)">
           <div v-bind:class="{ wh_is_today: item.is_today,
                                         wh_is_mark:item.is_mark,
-                                        wh_next_day_show:(isHideOtherday&&item.next_day_show)||item.other_month||item.ageDayHide}">
+                                        wh_next_day_show:(isHideOtherday&&item.next_day_show)||item.other_month||item.agoDayHide}">
             {{item.id}}
           </div>
         </div>
@@ -138,7 +138,7 @@ export default {
   },
   props: {
     markArray: { default: '[]' },
-    ageDayHide: { default: '0' },
+    agoDayHide: { default: '0' },
     isHideOtherday: { default: false }
   },
   created() {
@@ -149,7 +149,7 @@ export default {
       if (item.other_month) {
         item.other_month < 0 ? this.PreMonth() : this.NextMonth();
       } else {
-        if (!(this.isHideOtherday && item.next_day_show) && !item.ageDayHide) {
+        if (!(this.isHideOtherday && item.next_day_show) && !item.agoDayHide) {
           this.$emit('choseDay', item.date);
           for (var i = 0; i < this.list.length; i++) {
             if (i == index) {
@@ -259,7 +259,7 @@ export default {
             date: date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1),
             is_today: true,
             is_mark: this.markArray.indexOf(i + 1) >= 0,
-            ageDayHide: new Date(`${date.getFullYear()}-${mygetMonth}-${i + 1}`).getTime() < this.ageDayHide * 1,
+            agoDayHide: new Date(`${date.getFullYear()}-${mygetMonth}-${i + 1}`).getTime() < this.agoDayHide * 1,
             next_day_show:
               new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)).getTime() -
                 new Date().getTime() >
@@ -275,7 +275,7 @@ export default {
             date: date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1),
             is_today: false,
             is_mark: this.markArray.indexOf(i + 1) >= 0,
-            ageDayHide: new Date(`${date.getFullYear()}-${mygetMonth}-${i + 1}`).getTime() < this.ageDayHide * 1,
+            agoDayHide: new Date(`${date.getFullYear()}-${mygetMonth}-${i + 1}`).getTime() < this.agoDayHide * 1,
             next_day_show:
               new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)).getTime() -
                 new Date().getTime() >
