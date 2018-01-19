@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <Calendar ageDayHide='1514937600000' v-on:choseDay="clickDay" v-on:isToday="clickToday" v-on:changeMonth="changeDate" :markArray=[20,21] :isHideOtherday=true></Calendar>
+    <Calendar agoDayHide='1514937600000' v-on:choseDay="clickDay" v-on:isToday="clickToday" v-on:changeMonth="changeDate" :markArray=[20,21] :isHideOtherday=true></Calendar>
     <br/>
     <h1>标记了20号21号</h1>
   </div>

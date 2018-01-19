@@ -34,7 +34,7 @@ Vue.use(Calendar);
       v-on:changeMonth="changeDate"
       :markArray=[20,21] //标记的日期
       // :isHideOtherday=false  //超过今天也不允许点击
-      // :ageDayHide='1514937600000' //某个时间戳以前的不允许点击
+      // :agoDayHide='1514937600000' //某个时间戳以前的不允许点击
     ></Calendar>
 
 
@@ -58,7 +58,7 @@ Vue.use(Calendar);
 | isToday         | 切换月份的时候，如果切到当前月份，调用这个方法，返回当前月今天          |   无   |  否   |
 | markArray       | 如果需要某月的几天被标注，传当月的日期数组。如[2,6,8]当月2号6号8号被会标注 |  空数组  |  否   |
 | isHideOtherday | 超过今天的日期是否可以被点击，true是不可以点击，false是可以点击     | false |  否   |
-| ageDayHide | 某个时间戳以前不允许点击  时间戳长度是13位   | 0 |  否   |
+| agoDayHide | 某个时间戳以前不允许点击  时间戳长度是13位   | 0 |  否   |
 
 ## Other
 * src下面的App.vue 有demo可以参考.
