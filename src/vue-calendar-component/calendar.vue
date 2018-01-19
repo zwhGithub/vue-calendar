@@ -118,7 +118,7 @@
         <div class="wh_content_item" v-for="(item,index) in list" @click="clickDay(item,index)">
           <div v-bind:class="{ wh_is_today: item.is_today,
                                         wh_is_mark:item.is_mark,
-                                        wh_next_day_show:(is_hide_otherday&&item.next_day_show)||item.other_month}">
+                                        wh_next_day_show:(isHideOtherday&&item.next_day_show)||item.other_month||item.ageDayHide}">
             {{item.id}}
           </div>
         </div>
@@ -137,8 +137,9 @@ export default {
     };
   },
   props: {
-    mark_array: { default: '[]' },
-    is_hide_otherday: { default: false }
+    markArray: { default: '[]' },
+    ageDayHide: { default: '0' },
+    isHideOtherday: { default: false }
   },
   created() {
     this.my_data = new Date();
@@ -148,8 +149,8 @@ export default {
       if (item.other_month) {
         item.other_month < 0 ? this.PreMonth() : this.NextMonth();
       } else {
-        if (!(this.is_hide_otherday && item.next_day_show)) {
-          this.$emit('chose_day', item.date);
+        if (!(this.isHideOtherday && item.next_day_show) && !item.ageDayHide) {
+          this.$emit('choseDay', item.date);
           for (var i = 0; i < this.list.length; i++) {
             if (i == index) {
               this.list[i].is_today = true;
@@ -162,12 +163,12 @@ export default {
     },
     PreMonth: function() {
       this.my_data = this.getPreMonth(this.my_data);
-      this.$emit('change_month', this.dateformat(this.my_data));
+      this.$emit('changeMonth', this.dateformat(this.my_data));
       this.getlist(this.my_data);
     },
     NextMonth: function() {
       this.my_data = this.getNextMonth(this.my_data);
-      this.$emit('change_month', this.dateformat(this.my_data));
+      this.$emit('changeMonth', this.dateformat(this.my_data));
       this.getlist(this.my_data);
     },
     /**
@@ -257,14 +258,15 @@ export default {
             id: i + 1,
             date: date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1),
             is_today: true,
-            is_mark: this.mark_array.indexOf(i + 1) >= 0,
+            is_mark: this.markArray.indexOf(i + 1) >= 0,
+            ageDayHide: new Date(`${date.getFullYear()}-${mygetMonth}-${i + 1}`).getTime() < this.ageDayHide * 1,
             next_day_show:
               new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)).getTime() -
                 new Date().getTime() >
               0
           });
           this.$emit(
-            'is_today',
+            'isToday',
             this.dateformat(new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)))
           );
         } else {
@@ -272,7 +274,8 @@ export default {
             id: i + 1,
             date: date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1),
             is_today: false,
-            is_mark: this.mark_array.indexOf(i + 1) >= 0,
+            is_mark: this.markArray.indexOf(i + 1) >= 0,
+            ageDayHide: new Date(`${date.getFullYear()}-${mygetMonth}-${i + 1}`).getTime() < this.ageDayHide * 1,
             next_day_show:
               new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)).getTime() -
                 new Date().getTime() >
@@ -302,7 +305,7 @@ export default {
     this.getlist(this.my_data);
   },
   watch: {
-    mark_array(val, oldVal) {
+    markArray(val, oldVal) {
       var list = this.list;
       for (var i = 0; i < list.length; i++) {
         list[i].is_mark = false;

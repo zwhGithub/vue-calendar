@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <Calendar v-on:chose_day="clickday" v-on:is_today="clicktoday" v-on:change_month="change_date" :mark_array=[20,21] :is_hide_otherday=false></Calendar>
+    <Calendar ageDayHide='1514937600000' v-on:choseDay="clickDay" v-on:isToday="clickToday" v-on:changeMonth="changeDate" :markArray=[20,21] :isHideOtherday=true></Calendar>
     <br/>
     <h1>标记了20号21号</h1>
   </div>
@@ -12,14 +12,14 @@ export default {
     return {};
   },
   methods: {
-    clickday(data) {
+    clickDay(data) {
       console.log(data); //选中某天
       this.$toast('选中了' + data);
     },
-    clicktoday(data) {
+    clickToday(data) {
       console.log(data); //跳到了本月
     },
-    change_date(data) {
+    changeDate(data) {
       this.$toast('切换到的月份为' + data);
       console.log(data); //左右点击切换月份
     }
