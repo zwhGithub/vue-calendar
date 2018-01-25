@@ -1,8 +1,9 @@
 <template>
   <div class="content">
-    <Calendar agoDayHide='1514937600000' v-on:choseDay="clickDay" v-on:isToday="clickToday" v-on:changeMonth="changeDate" :markArray=[20,21] :isHideOtherday=true></Calendar>
+    <!-- agoDayHide='1514937600000' -->
+    <Calendar ref="Calendar" v-on:choseDay="clickDay" v-on:isToday="clickToday" v-on:changeMonth="changeDate" :markArray=[20,21] :isHideOtherday=true></Calendar>
     <br/>
-    <h1>标记了20号21号</h1>
+    <h1 @click="demo">标记了20号21号</h1>
   </div>
 </template>
 
@@ -22,6 +23,9 @@ export default {
     changeDate(data) {
       this.$toast('切换到的月份为' + data);
       console.log(data); //左右点击切换月份
+    },
+    demo() {
+      this.$refs.Calendar.ChoseMonth('2017-01');
     }
   }
 };
@@ -29,8 +33,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.wh_is_mark {
-  background: red;
-  border: none;
+h1 {
+  text-align: center;
 }
 </style>
