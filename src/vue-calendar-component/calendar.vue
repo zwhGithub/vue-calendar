@@ -3,7 +3,13 @@
   margin: 0;
   padding: 0;
 }
-
+.wh_container {
+  max-width: 410px;
+  margin: auto;
+}
+li {
+  list-style-type: none;
+}
 .wh_content_all {
   font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', STHeiti, 'Microsoft Yahei', Tahoma,
     Simsun, sans-serif;
@@ -23,39 +29,27 @@
 .wh_content:first-child .wh_content_item {
   color: #ddd;
   font-size: 16px;
-  height: 15vw;
-  line-height: 15vw;
+  height: 15%;
+  line-height: 15%;
 }
 
 .wh_content_item {
   font-size: 15px;
-  height: 10.3vw;
-  line-height: 10.3vw;
-  width: 13.4vw;
+  width: 13.4%;
+  padding-bottom: 10.14%;
   text-align: center;
   color: #fff;
+  position: relative;
 }
-
-.wh_is_today {
-  width: 9vw;
-  height: 9vw;
-  line-height: 9vw;
-  margin: auto;
-  margin-top: 0.65vw;
-  background-color: #fff;
-  color: #0fc37c;
-  border-radius: 100px;
-  text-align: center;
-}
-.wh_is_mark {
-  width: 9vw;
-  height: 9vw;
-  line-height: 9vw;
-  margin: auto;
-  margin-top: 0.65vw;
-  border-radius: 100px;
-  border: 1px solid blue;
-  z-index: 2;
+.wh_content_item div {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .wh_top_changge {
   display: flex;
@@ -87,7 +81,16 @@
 .wh_jiantou2:active {
   border-color: #ddd;
 }
-
+.wh_is_today {
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  margin: auto;
+  background-color: #fff;
+  color: #0fc37c;
+  border-radius: 100px;
+  text-align: center;
+}
 .wh_jiantou2 {
   width: 12px;
   height: 12px;
@@ -95,12 +98,21 @@
   border-right: 2px solid #ffffff;
   transform: rotate(45deg);
 }
+.wh_is_mark {
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  margin: auto;
+  border-radius: 100px;
+  border: 1px solid blue;
+  z-index: 2;
+}
 .wh_next_day_show {
   color: #bfbfbf;
 }
 </style>
 <template>
-  <section>
+  <section class="wh_container">
     <div class="wh_content_all">
       <div class="wh_top_changge">
         <li @click="PreMonth">
@@ -112,14 +124,19 @@
         </li>
       </div>
       <div class="wh_content">
-        <div class="wh_content_item" v-for="tag in text_top">{{tag}}</div>
+        <div class="wh_content_item" v-for="tag in text_top">
+          <div>
+            {{tag}}
+          </div>
+        </div>
       </div>
       <div class="wh_content">
         <div class="wh_content_item" v-for="(item,index) in list" @click="clickDay(item,index)">
-          <div v-bind:class="{ wh_is_today: item.is_today,
+          <div>
+            <li v-bind:class="{ wh_is_today: item.is_today,
                                         wh_is_mark:item.is_mark,
                                         wh_next_day_show:(isHideOtherday&&item.next_day_show)||item.other_month||item.agoDayHide}">
-            {{item.id}}
+              {{item.id}}</li>
           </div>
         </div>
       </div>
@@ -160,6 +177,11 @@ export default {
           }
         }
       }
+    },
+    ChoseMonth: function(date) {
+      this.my_data = new Date(date);
+      this.$emit('changeMonth', this.dateformat(this.my_data));
+      this.getlist(this.my_data);
     },
     PreMonth: function() {
       this.my_data = this.getPreMonth(this.my_data);
