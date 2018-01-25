@@ -48,6 +48,13 @@ Vue.use(Calendar);
       console.log(data); //左右点击切换月份
     }
 
+
+ 在 <Calendar> 标签上添加 ref 属性, 例如: <Calendar ref="Calendar"></Calendar>
+暴露出三个方法可以  直接切换月份
+this.$refs.Calendar.PreMonth(); //调用方法实现转到上个月
+this.$refs.Calendar.NextMonth(); //调用方法实现转到下个月
+this.$refs.Calendar.ChoseMonth('2017-01-01'); //调用方法实现转到某个月
+
 ```
 
 ### API
@@ -60,11 +67,6 @@ Vue.use(Calendar);
 | isHideOtherday | 超过今天的日期是否可以被点击，true是不可以点击，false是可以点击     | false |  否   |
 | agoDayHide | 某个时间戳以前不允许点击  时间戳长度是13位   | 0 |  否   |
 
-- 在 <Calendar> 标签上添加 ref 属性, 例如: <Calendar ref="Calendar"></Calendar>
-
- - this.$refs.Calendar.PreMonth(); //调用方法实现转到上个月
- - this.$refs.Calendar.NextMonth(); //调用方法实现转到下个月
- - this.$refs.Calendar.ChoseMonth('2017-01-01'); //调用方法实现转到某个月
 
 ## Other
 * src下面的App.vue 有demo可以参考.
