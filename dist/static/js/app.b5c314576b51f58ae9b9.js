@@ -64,7 +64,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__("YaEn");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_toast_component__ = __webpack_require__("kqZI");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_toast_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_toast_component__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_calendar_component__ = __webpack_require__("gv6k");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_calendar_component__ = __webpack_require__("ESnK");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_calendar_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue_calendar_component__);
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -107,6 +107,13 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["default"]({
 
 /***/ }),
 
+/***/ "OCSH":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "YaEn":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -130,21 +137,14 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["default"].use(__WEBPACK_IMPORTED_MODULE_1_vue
 
 /***/ }),
 
-/***/ "cZeh":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "eNIl":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_script_index_0_demo_vue__ = __webpack_require__("tH/I");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_6de59895_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__ = __webpack_require__("zNPe");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_e79bac1a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__ = __webpack_require__("lRZ4");
 function injectStyle (ssrContext) {
-  __webpack_require__("cZeh")
+  __webpack_require__("OCSH")
 }
 var normalizeComponent = __webpack_require__("/Xao")
 /* script */
@@ -161,7 +161,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_script_index_0_demo_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_6de59895_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_e79bac1a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -170,6 +170,17 @@ var Component = normalizeComponent(
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
+
+/***/ }),
+
+/***/ "lRZ4":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"content"},[_c('Calendar',{ref:"Calendar",attrs:{"markArray":[20,21],"isHideOtherday":true},on:{"choseDay":_vm.clickDay,"isToday":_vm.clickToday,"changeMonth":_vm.changeDate}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('h1',{on:{"click":_vm.demo}},[_vm._v("标记了20号21号")])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -202,22 +213,14 @@ var Component = normalizeComponent(
     changeDate(data) {
       this.$toast('切换到的月份为' + data);
       console.log(data); //左右点击切换月份
+    },
+    demo() {
+      //this.$refs.Calendar.ChoseMonth('2017-01');
     }
   }
 });
 
-/***/ }),
-
-/***/ "zNPe":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"content"},[_c('Calendar',{attrs:{"markArray":[20,21],"isHideOtherday":true},on:{"choseDay":_vm.clickDay,"isToday":_vm.clickToday,"changeMonth":_vm.changeDate}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('h1',[_vm._v("标记了20号21号")])],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
 /***/ })
 
 },["NHnr"]);
-//# sourceMappingURL=app.155057836cc5518d49c3.js.map
+//# sourceMappingURL=app.b5c314576b51f58ae9b9.js.map

@@ -25,7 +25,7 @@ export default {
       console.log(data); //左右点击切换月份
     },
     demo() {
-      this.$refs.Calendar.ChoseMonth('2017-01');
+      //this.$refs.Calendar.ChoseMonth('2017-01');
     }
   }
 };
