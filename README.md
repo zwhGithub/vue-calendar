@@ -59,7 +59,7 @@ Vue.use(Calendar);
 | isHideOtherday | 超过今天的日期是否可以被点击，true是不可以点击，false是可以点击     | false |  否   |
 | agoDayHide | 某个时间戳以前不允许点击  时间戳长度是13位   | 0 |  否   |
 ```javascript
-✅ 在 <Calendar> 标签上添加 ref 属性, 暴露出三个方法可以  直接切换月份
+✅ 在 Calendar标签上添加 ref 属性, 暴露出三个方法可以  直接切换月份
 例如: <Calendar ref="Calendar"></Calendar>
 
       ✅ this.$refs.Calendar.PreMonth();  //调用方法实现转到上个月
