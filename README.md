@@ -49,15 +49,6 @@ Vue.use(Calendar);
     }
 ```
 
-```javascript
- ✅ 在 <Calendar> 标签上添加 ref 属性, 例如: <Calendar ref="Calendar"></Calendar>
-暴露出三个方法可以  直接切换月份
-
-      ✅ this.$refs.Calendar.PreMonth(); //调用方法实现转到上个月
-      ✅ this.$refs.Calendar.NextMonth(); //调用方法实现转到下个月
-      ✅ this.$refs.Calendar.ChoseMonth('2017-01-01'); //调用方法实现转到某个月
-```
-
 ### API
 | 属性               | 说明                                       |  默认   | 是否必传 |
 | :--------------- | :--------------------------------------- | :---: | :--: |
@@ -67,6 +58,15 @@ Vue.use(Calendar);
 | markArray       | 如果需要某月的几天被标注，传当月的日期数组。如[2,6,8]当月2号6号8号被会标注 |  空数组  |  否   |
 | isHideOtherday | 超过今天的日期是否可以被点击，true是不可以点击，false是可以点击     | false |  否   |
 | agoDayHide | 某个时间戳以前不允许点击  时间戳长度是13位   | 0 |  否   |
+```javascript
+✅ 在 <Calendar> 标签上添加 ref 属性, 暴露出三个方法可以  直接切换月份
+例如: <Calendar ref="Calendar"></Calendar>
+
+      ✅ this.$refs.Calendar.PreMonth();  //调用方法实现转到上个月
+      ✅ this.$refs.Calendar.NextMonth(); //调用方法实现转到下个月
+      ✅ this.$refs.Calendar.ChoseMonth('2017-01-01'); //调用方法实现转到某个月
+      
+```
 
 
 ## Other
