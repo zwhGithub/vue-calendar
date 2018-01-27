@@ -12,7 +12,7 @@
 
 ## 效果
  ![效果](https://qiniu.epipe.cn/5465939501580804096?imageView2/1/w/290/h/470)
-- 觉得好用给一个star哦 ~~~
+🎉   觉得好用给一个 star哦~   🎉
 
 
 ## Install
@@ -47,14 +47,15 @@ Vue.use(Calendar);
     changeDate(data) {
       console.log(data); //左右点击切换月份
     }
+```
 
-
- 在 <Calendar> 标签上添加 ref 属性, 例如: <Calendar ref="Calendar"></Calendar>
+```javascript
+ ✅ 在 <Calendar> 标签上添加 ref 属性, 例如: <Calendar ref="Calendar"></Calendar>
 暴露出三个方法可以  直接切换月份
-this.$refs.Calendar.PreMonth(); //调用方法实现转到上个月
-this.$refs.Calendar.NextMonth(); //调用方法实现转到下个月
-this.$refs.Calendar.ChoseMonth('2017-01-01'); //调用方法实现转到某个月
 
+      ✅ this.$refs.Calendar.PreMonth(); //调用方法实现转到上个月
+      ✅ this.$refs.Calendar.NextMonth(); //调用方法实现转到下个月
+      ✅ this.$refs.Calendar.ChoseMonth('2017-01-01'); //调用方法实现转到某个月
 ```
 
 ### API
