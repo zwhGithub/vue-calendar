@@ -38,7 +38,7 @@ Vue.use(Calendar);
       v-on:isToday="clickToday"
       v-on:changeMonth="changeDate"
       :markArray=[20,21] //标记的日期
-      // :isHideOtherday=false  //超过今天也不允许点击
+      // isHideOtherday=false  //超过今天也不允许点击
       // :agoDayHide='1514937600000' //某个时间戳以前的不允许点击
     ></Calendar>
 
@@ -46,11 +46,11 @@ Vue.use(Calendar);
     clickDay(data) {
       console.log(data); //选中某天
     },
-    clickToday(data) {
-      console.log(data); //跳到了本月
-    },
     changeDate(data) {
       console.log(data); //左右点击切换月份
+    },
+    clickToday(data) {
+      console.log(data); //跳到了本月
     }
 ```
 
