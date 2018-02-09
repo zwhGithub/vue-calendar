@@ -63,9 +63,11 @@
     line-height: 37px;
   }
 
-  .wh_content_item li:hover {
-    background: #71c7a5;
-    cursor: pointer
+  @media screen and (min-width: 460px) {
+    .wh_content_item li:hover {
+      background: #71c7a5;
+      cursor: pointer
+    }
   }
 
   .wh_top_changge {
@@ -101,7 +103,7 @@
     border-color: #ddd;
   }
 
-  .wh_content_item div .wh_is_today {
+  .wh_content_item div .wh_isToday {
     margin: auto;
     background-color: #fff;
     color: #51c597;
@@ -117,14 +119,14 @@
     transform: rotate(45deg);
   }
 
-  .wh_content_item div .wh_is_mark {
+  .wh_content_item div .wh_isMark {
     margin: auto;
     border-radius: 100px;
     border: 1px solid blue;
     z-index: 2;
   }
 
-  .wh_content_item div .wh_next_day_show {
+  .wh_content_item div .wh_nextDayShow {
     color: #bfbfbf;
   }
 </style>
@@ -132,16 +134,16 @@
   <section class="wh_container">
     <div class="wh_content_all">
       <div class="wh_top_changge">
-        <li @click="PreMonth">
+        <li @click="PreMonth()">
           <div class="wh_jiantou1"></div>
         </li>
-        <li class="wh_content_li">{{date_top}}</li>
-        <li @click="NextMonth">
+        <li class="wh_content_li">{{dateTop}}</li>
+        <li @click="NextMonth()">
           <div class="wh_jiantou2"></div>
         </li>
       </div>
       <div class="wh_content">
-        <div class="wh_content_item" v-for="tag in text_top">
+        <div class="wh_content_item" v-for="tag in textTop">
           <div>
             {{tag}}
           </div>
@@ -150,10 +152,13 @@
       <div class="wh_content">
         <div class="wh_content_item" v-for="(item,index) in list" @click="clickDay(item,index)">
           <div>
-            <li v-bind:class="{ wh_is_today: item.is_today,
-                                        wh_is_mark:item.is_mark,
-                                        wh_next_day_show:(isHideOtherday&&item.next_day_show)||item.other_month||item.agoDayHide}">
-              {{item.id}}</li>
+            <li class="wh_nextDayShow" v-if="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide">
+              {{item.id}}
+            </li>
+            <li v-else="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide" v-bind:class="{ wh_isToday: item.isToday,
+                                        wh_isMark:item.isMark}">
+              {{item.id}}
+            </li>
           </div>
         </div>
       </div>
@@ -164,62 +169,65 @@
   export default {
     data() {
       return {
-        text_top: ['一', '二', '三', '四', '五', '六', '日'],
-        my_data: [],
+        textTop: ['一', '二', '三', '四', '五', '六', '日'],
+        myData: [],
         list: [],
-        date_top: ''
+        dateTop: ''
       };
     },
     props: {
       markArray: { default: '[]' },
       agoDayHide: { default: '0' },
+      futureDayHide: { default: '15181550670000' },
       isHideOtherday: { default: false }
     },
     created() {
-      this.my_data = new Date();
+      this.myData = new Date();
     },
     methods: {
       clickDay: function (item, index) {
-        if (item.other_month) {
-          item.other_month < 0 ? this.PreMonth() : this.NextMonth();
+        if (!(this.isHideOtherday && item.nextDayShow) && !item.dayHide) {
+          this.$emit('choseDay', item.date);
+        }
+        if (item.otherMonth) {
+          item.otherMonth < 0 ? this.PreMonth(item.date) : this.NextMonth(item.date);
         } else {
-          if (!(this.isHideOtherday && item.next_day_show) && !item.agoDayHide) {
-            this.$emit('choseDay', item.date);
+          if (!(this.isHideOtherday && item.nextDayShow) && !item.dayHide) {
             for (var i = 0; i < this.list.length; i++) {
               if (i == index) {
-                this.list[i].is_today = true;
+                this.list[i].isToday = true;
               } else {
-                this.list[i].is_today = false;
+                this.list[i].isToday = false;
               }
             }
           }
         }
       },
-      ChoseMonth: function (date) {
-        this.my_data = new Date(date);
-        this.$emit('changeMonth', this.dateformat(this.my_data));
-        this.getlist(this.my_data);
+      ChoseMonth: function (date, isChosedDay = true) {
+        date = this.dateFormat(date);
+        this.myData = new Date(date);
+        this.$emit('changeMonth', this.dateFormat(this.myData));
+        this.getList(this.myData, date, isChosedDay);
       },
-      PreMonth: function () {
-        this.my_data = this.getPreMonth(this.my_data);
-        this.$emit('changeMonth', this.dateformat(this.my_data));
-        this.getlist(this.my_data);
+      PreMonth: function (date, isChosedDay = true) {
+        date = this.dateFormat(date);
+        this.myData = this.getPreMonth(this.myData);
+        this.$emit('changeMonth', this.dateFormat(this.myData));
+        this.getList(this.myData, date, isChosedDay);
       },
-      NextMonth: function () {
-        this.my_data = this.getNextMonth(this.my_data);
-        this.$emit('changeMonth', this.dateformat(this.my_data));
-        this.getlist(this.my_data);
+      NextMonth: function (date, isChosedDay = true) {
+        date = this.dateFormat(date);
+        this.myData = this.getNextMonth(this.myData);
+        this.$emit('changeMonth', this.dateFormat(this.myData));
+        this.getList(this.myData, date, isChosedDay);
       },
-      /**
-       * 获取上一个月
-       */
       getPreMonth: function (date) {
-        var time_array = this.dateformat(date).split('/');
-        var year = time_array[0]; //获取当前日期的年份
-        var month = time_array[1]; //获取当前日期的月份
-        var day = time_array[2]; //获取当前日期的日
+        var timeArray = this.dateFormat(date).split('/');
+        var year = timeArray[0];
+        var month = timeArray[1];
+        var day = timeArray[2];
         var days = new Date(year, month, 0);
-        days = days.getDate(); //获取当前日期中月的天数
+        days = days.getDate();
         var year2 = year;
         var month2 = parseInt(month) - 1;
         if (month2 == 0) {
@@ -238,11 +246,8 @@
         var t2 = year2 + '/' + month2 + '/' + day2;
         return new Date(t2);
       },
-      /**
-       * 获取下一个月
-       */
       getNextMonth: function (date) {
-        var arr = this.dateformat(date).split('/');
+        var arr = this.dateFormat(date).split('/');
         var year = arr[0]; //获取当前日期的年份
         var month = arr[1]; //获取当前日期的月份
         var day = arr[2]; //获取当前日期的日
@@ -267,8 +272,7 @@
         var t2 = year2 + '/' + month2 + '/' + day2;
         return new Date(t2);
       },
-      getDaysInOneMonth: function (date) {
-        //通过获取下月面0号的日期可以知道这个月有多少天
+      getDaysInOneMonth: function (date) {//天数
         var getyear = date.getFullYear();
         var getmonth = date.getMonth() + 1;
         getmonth = parseInt(getmonth, 10);
@@ -276,82 +280,101 @@
         return d.getDate();
       },
       getMonthweek: function (date) {
-        //获取本月第一天是星期几，然后在去向前空几个
         var getyear = date.getFullYear();
         var getmonth = date.getMonth() + 1;
-        var date_one = new Date(getyear + '/' + getmonth + '/1');
-        return date_one.getDay() == 0 ? 6 : date_one.getDay() - 1;
+        var dateOne = new Date(getyear + '/' + getmonth + '/1');
+        return dateOne.getDay() == 0 ? 6 : dateOne.getDay() - 1;
       },
-      getlist: function (date) {
-        //渲染出来当前list
+      getList: function (date, chooseDay, isChosedDay = true) {
         var mygetMonth = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
-        this.date_top = date.getFullYear() + '年' + mygetMonth + '月';
+        this.dateTop = date.getFullYear() + '年' + mygetMonth + '月';
         var array = [];
         for (var i = 0; i < this.getDaysInOneMonth(date); i++) {
+          var nowTime = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1);
           if (
-            this.dateformat(new Date()) ==
-            this.dateformat(new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)))
+            this.dateFormat(new Date()) ==
+            this.dateFormat(new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1))) && !chooseDay
           ) {
             array = array.concat({
-              //如果当前这天是今天 is_today是true
               id: i + 1,
-              date: date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1),
-              is_today: true,
-              is_mark: this.markArray.indexOf(i + 1) >= 0,
-              agoDayHide: new Date(`${date.getFullYear()}-${mygetMonth}-${i + 1}`).getTime() < this.agoDayHide * 1,
-              next_day_show:
-                new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)).getTime() -
-                new Date().getTime() >
-                0
+              date: nowTime,
+              isToday: true,
+              isMark: this.markArray.indexOf(i + 1) >= 0,
+              dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
+              nextDayShow:
+                new Date(nowTime).getTime() >
+                new Date().getTime()
             });
             this.$emit(
               'isToday',
-              this.dateformat(new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)))
+              this.dateFormat(new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)))
             );
           } else {
             array = array.concat({
               id: i + 1,
-              date: date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1),
-              is_today: false,
-              is_mark: this.markArray.indexOf(i + 1) >= 0,
-              agoDayHide: new Date(`${date.getFullYear()}-${mygetMonth}-${i + 1}`).getTime() < this.agoDayHide * 1,
-              next_day_show:
-                new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)).getTime() -
-                new Date().getTime() >
-                0
+              date: nowTime,
+              isToday: chooseDay == nowTime && isChosedDay,
+              isMark: this.markArray.indexOf(i + 1) >= 0,
+              dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
+              nextDayShow:
+                new Date(nowTime).getTime() >
+                new Date().getTime()
             });
           }
         }
         var array2 = [];
         var num = this.getDaysInOneMonth(this.getPreMonth(date)) - this.getMonthweek(date) + 1;
+        var preDate = this.getPreMonth(date);
+        var nextDate = this.getNextMonth(date);
+        //上个月多少开始
         for (var i = 0; i < this.getMonthweek(date); i++) {
-          array2 = array2.concat({ other_month: -1, id: num + i });
+          var nowTime = preDate.getFullYear() + '/' + (preDate.getMonth() + 1) + '/' + (num + i);
+          array2 = array2.concat(
+            {
+              id: num + i,
+              date: nowTime,
+              dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
+              nextDayShow:
+                new Date(nowTime).getTime() >
+                new Date().getTime(),
+              otherMonth: -1
+            });
         }
         array = array2.concat(array);
-        var length_ = 7 - array.length % 7;
-        if (length_ < 7) {
-          for (let i = 0; i < length_; i++) {
-            array.push({ other_month: 1, id: i + 1 });
+        var _length = 7 - array.length % 7;
+        if (_length < 7) {
+          var nowTime = nextDate.getFullYear() + '/' + (nextDate.getMonth() + 1) + '/' + (i + 1);
+          for (let i = 0; i < _length; i++) {
+            array.push({
+              id: i + 1,
+              date: nextDate.getFullYear() + '/' + (nextDate.getMonth() + 1) + '/' + (i + 1),
+              dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
+              nextDayShow:
+                new Date(nowTime).getTime() >
+                new Date().getTime(),
+              otherMonth: 1
+            });
           }
         }
         this.list = array;
       },
-      dateformat: function (date) {
+      dateFormat: function (date) {
+        date = new Date(date)
         return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate();
       }
     },
     mounted() {
-      this.getlist(this.my_data);
+      this.getList(this.myData);
     },
     watch: {
       markArray(val, oldVal) {
         var list = this.list;
         for (var i = 0; i < list.length; i++) {
-          list[i].is_mark = false;
+          list[i].isMark = false;
           if (list[i].date) {
             for (var n = 0; n < val.length; n++) {
               if (list[i].id == val[n]) {
-                list[i].is_mark = true;
+                list[i].isMark = true;
               }
             }
           }

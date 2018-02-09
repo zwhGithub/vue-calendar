@@ -6,7 +6,7 @@
 
 ## Why
 
-* Github 上太多一个输入框点击弹出日历选择某个时间的组件，却没有找到适合一个单纯展示日历并且能点击获取时间的组件
+* Github 上很多点击弹出日历选择某个时间的组件，却没有找到单纯展示日历并且能点击获取时间的组件
 * 少部分日历组件的占用内存过于大，对于日历这样简单的功能来说显然不够合理
 
 ## Demo
@@ -36,11 +36,12 @@ Vue.use(Calendar);
 
     <Calendar
       v-on:choseDay="clickDay"
-      v-on:isToday="clickToday"
       v-on:changeMonth="changeDate"
+      // v-on:isToday="clickToday"
       :markArray=[20,21] //标记的日期
       // isHideOtherday=false  //超过今天也不允许点击
-      // :agoDayHide='1514937600000' //某个时间戳以前的不允许点击
+      // :agoDayHide='1514937600000' //某个日期以前的不允许点击  时间戳13位
+      // :futureDayHide='1525104000000' //某个日期以后的不允许点击  时间戳13位
     ></Calendar>
 
 
@@ -64,7 +65,8 @@ Vue.use(Calendar);
 | isToday        | 切换月份的时候，如果切到当前月份，调用这个方法，返回当前月今天                   |   无   |    否    |
 | markArray      | 如果需要某月的几天被标注，传当月的日期数组。如[2,6,8]当月 2 号 6 号 8 号被会标注 | 空数组 |    否    |
 | isHideOtherday | 超过今天的日期是否可以被点击，true 是不可以点击，false 是可以点击                | false  |    否    |
-| agoDayHide     | 某个时间戳以前不允许点击 时间戳长度是 13 位                                      |   0    |    否    |
+| agoDayHide     | 某个日期以前的不允许点击 时间戳长度是 13 位                                      |   0    |    否    |
+| futureDayHide  | 某个日期以后的不允许点击 时间戳长度是 13 位                                      |  很大  |    否    |
 
 ```javascript
 ✅ 在 Calendar标签上添加 ref 属性, 暴露出三个方法可以  直接切换月份
@@ -73,6 +75,8 @@ Vue.use(Calendar);
       ✅ this.$refs.Calendar.PreMonth();  //调用方法实现转到上个月
       ✅ this.$refs.Calendar.NextMonth(); //调用方法实现转到下个月
       ✅ this.$refs.Calendar.ChoseMonth('2017-01-01'); //调用方法实现转到某个月
+      ✅ this.$refs.Calendar.ChoseMonth('2017-01-01',false); //跳转到17年12月12日 但是不选中当天
+      //第二个参数 false表示不选中日期
 ```
 
 ## Other
