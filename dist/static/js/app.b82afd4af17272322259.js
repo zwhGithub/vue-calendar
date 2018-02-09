@@ -1,9 +1,13 @@
 webpackJsonp([1],{
 
-/***/ "4AlO":
-/***/ (function(module, exports) {
+/***/ "FWHs":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"content"},[_c('Calendar',{ref:"Calendar",attrs:{"markArray":[20,21]},on:{"choseDay":_vm.clickDay,"isToday":_vm.clickToday,"changeMonth":_vm.changeDate}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('h1',{on:{"click":_vm.demo}},[_vm._v("标记了20号21号")]),_vm._v(" "),_c('div',{staticClass:"div",on:{"click":_vm.demo}},[_vm._v("\n        点击跳到2017-12-12\n    ")])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -210,66 +214,74 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   data() {
     return {
-      text_top: ['一', '二', '三', '四', '五', '六', '日'],
-      my_data: [],
+      textTop: ['一', '二', '三', '四', '五', '六', '日'],
+      myData: [],
       list: [],
-      date_top: ''
+      dateTop: ''
     };
   },
   props: {
     markArray: { default: '[]' },
     agoDayHide: { default: '0' },
+    futureDayHide: { default: '15181550670000' },
     isHideOtherday: { default: false }
   },
   created() {
-    this.my_data = new Date();
+    this.myData = new Date();
   },
   methods: {
     clickDay: function (item, index) {
-      if (item.other_month) {
-        item.other_month < 0 ? this.PreMonth() : this.NextMonth();
+      if (!(this.isHideOtherday && item.nextDayShow) && !item.dayHide) {
+        this.$emit('choseDay', item.date);
+      }
+      if (item.otherMonth) {
+        item.otherMonth < 0 ? this.PreMonth(item.date) : this.NextMonth(item.date);
       } else {
-        if (!(this.isHideOtherday && item.next_day_show) && !item.agoDayHide) {
-          this.$emit('choseDay', item.date);
+        if (!(this.isHideOtherday && item.nextDayShow) && !item.dayHide) {
           for (var i = 0; i < this.list.length; i++) {
             if (i == index) {
-              this.list[i].is_today = true;
+              this.list[i].isToday = true;
             } else {
-              this.list[i].is_today = false;
+              this.list[i].isToday = false;
             }
           }
         }
       }
     },
-    ChoseMonth: function (date) {
-      this.my_data = new Date(date);
-      this.$emit('changeMonth', this.dateformat(this.my_data));
-      this.getlist(this.my_data);
+    ChoseMonth: function (date, isChosedDay = true) {
+      date = this.dateFormat(date);
+      this.myData = new Date(date);
+      this.$emit('changeMonth', this.dateFormat(this.myData));
+      this.getList(this.myData, date, isChosedDay);
     },
-    PreMonth: function () {
-      this.my_data = this.getPreMonth(this.my_data);
-      this.$emit('changeMonth', this.dateformat(this.my_data));
-      this.getlist(this.my_data);
+    PreMonth: function (date, isChosedDay = true) {
+      date = this.dateFormat(date);
+      this.myData = this.getPreMonth(this.myData);
+      this.$emit('changeMonth', this.dateFormat(this.myData));
+      this.getList(this.myData, date, isChosedDay);
     },
-    NextMonth: function () {
-      this.my_data = this.getNextMonth(this.my_data);
-      this.$emit('changeMonth', this.dateformat(this.my_data));
-      this.getlist(this.my_data);
+    NextMonth: function (date, isChosedDay = true) {
+      date = this.dateFormat(date);
+      this.myData = this.getNextMonth(this.myData);
+      this.$emit('changeMonth', this.dateFormat(this.myData));
+      this.getList(this.myData, date, isChosedDay);
     },
-    /**
-     * 获取上一个月
-     */
     getPreMonth: function (date) {
-      var time_array = this.dateformat(date).split('/');
-      var year = time_array[0]; //获取当前日期的年份
-      var month = time_array[1]; //获取当前日期的月份
-      var day = time_array[2]; //获取当前日期的日
+      var timeArray = this.dateFormat(date).split('/');
+      var year = timeArray[0];
+      var month = timeArray[1];
+      var day = timeArray[2];
       var days = new Date(year, month, 0);
-      days = days.getDate(); //获取当前日期中月的天数
+      days = days.getDate();
       var year2 = year;
       var month2 = parseInt(month) - 1;
       if (month2 == 0) {
@@ -288,11 +300,8 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
       var t2 = year2 + '/' + month2 + '/' + day2;
       return new Date(t2);
     },
-    /**
-     * 获取下一个月
-     */
     getNextMonth: function (date) {
-      var arr = this.dateformat(date).split('/');
+      var arr = this.dateFormat(date).split('/');
       var year = arr[0]; //获取当前日期的年份
       var month = arr[1]; //获取当前日期的月份
       var day = arr[2]; //获取当前日期的日
@@ -318,7 +327,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
       return new Date(t2);
     },
     getDaysInOneMonth: function (date) {
-      //通过获取下月面0号的日期可以知道这个月有多少天
+      //天数
       var getyear = date.getFullYear();
       var getmonth = date.getMonth() + 1;
       getmonth = parseInt(getmonth, 10);
@@ -326,70 +335,86 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
       return d.getDate();
     },
     getMonthweek: function (date) {
-      //获取本月第一天是星期几，然后在去向前空几个
       var getyear = date.getFullYear();
       var getmonth = date.getMonth() + 1;
-      var date_one = new Date(getyear + '/' + getmonth + '/1');
-      return date_one.getDay() == 0 ? 6 : date_one.getDay() - 1;
+      var dateOne = new Date(getyear + '/' + getmonth + '/1');
+      return dateOne.getDay() == 0 ? 6 : dateOne.getDay() - 1;
     },
-    getlist: function (date) {
-      //渲染出来当前list
+    getList: function (date, chooseDay, isChosedDay = true) {
       var mygetMonth = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
-      this.date_top = date.getFullYear() + '年' + mygetMonth + '月';
+      this.dateTop = date.getFullYear() + '年' + mygetMonth + '月';
       var array = [];
       for (var i = 0; i < this.getDaysInOneMonth(date); i++) {
-        if (this.dateformat(new Date()) == this.dateformat(new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)))) {
+        var nowTime = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1);
+        if (this.dateFormat(new Date()) == this.dateFormat(new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1))) && !chooseDay) {
           array = array.concat({
-            //如果当前这天是今天 is_today是true
             id: i + 1,
-            date: date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1),
-            is_today: true,
-            is_mark: this.markArray.indexOf(i + 1) >= 0,
-            agoDayHide: new Date(`${date.getFullYear()}-${mygetMonth}-${i + 1}`).getTime() < this.agoDayHide * 1,
-            next_day_show: new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)).getTime() - new Date().getTime() > 0
+            date: nowTime,
+            isToday: true,
+            isMark: this.markArray.indexOf(i + 1) >= 0,
+            dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
+            nextDayShow: new Date(nowTime).getTime() > new Date().getTime()
           });
-          this.$emit('isToday', this.dateformat(new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1))));
+          this.$emit('isToday', this.dateFormat(new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1))));
         } else {
           array = array.concat({
             id: i + 1,
-            date: date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1),
-            is_today: false,
-            is_mark: this.markArray.indexOf(i + 1) >= 0,
-            agoDayHide: new Date(`${date.getFullYear()}-${mygetMonth}-${i + 1}`).getTime() < this.agoDayHide * 1,
-            next_day_show: new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)).getTime() - new Date().getTime() > 0
+            date: nowTime,
+            isToday: chooseDay == nowTime && isChosedDay,
+            isMark: this.markArray.indexOf(i + 1) >= 0,
+            dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
+            nextDayShow: new Date(nowTime).getTime() > new Date().getTime()
           });
         }
       }
       var array2 = [];
       var num = this.getDaysInOneMonth(this.getPreMonth(date)) - this.getMonthweek(date) + 1;
+      var preDate = this.getPreMonth(date);
+      var nextDate = this.getNextMonth(date);
+      //上个月多少开始
       for (var i = 0; i < this.getMonthweek(date); i++) {
-        array2 = array2.concat({ other_month: -1, id: num + i });
+        var nowTime = preDate.getFullYear() + '/' + (preDate.getMonth() + 1) + '/' + (num + i);
+        array2 = array2.concat({
+          id: num + i,
+          date: nowTime,
+          dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
+          nextDayShow: new Date(nowTime).getTime() > new Date().getTime(),
+          otherMonth: -1
+        });
       }
       array = array2.concat(array);
-      var length_ = 7 - array.length % 7;
-      if (length_ < 7) {
-        for (let i = 0; i < length_; i++) {
-          array.push({ other_month: 1, id: i + 1 });
+      var _length = 7 - array.length % 7;
+      if (_length < 7) {
+        var nowTime = nextDate.getFullYear() + '/' + (nextDate.getMonth() + 1) + '/' + (i + 1);
+        for (let i = 0; i < _length; i++) {
+          array.push({
+            id: i + 1,
+            date: nextDate.getFullYear() + '/' + (nextDate.getMonth() + 1) + '/' + (i + 1),
+            dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
+            nextDayShow: new Date(nowTime).getTime() > new Date().getTime(),
+            otherMonth: 1
+          });
         }
       }
       this.list = array;
     },
-    dateformat: function (date) {
+    dateFormat: function (date) {
+      date = new Date(date);
       return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate();
     }
   },
   mounted() {
-    this.getlist(this.my_data);
+    this.getList(this.myData);
   },
   watch: {
     markArray(val, oldVal) {
       var list = this.list;
       for (var i = 0; i < list.length; i++) {
-        list[i].is_mark = false;
+        list[i].isMark = false;
         if (list[i].date) {
           for (var n = 0; n < val.length; n++) {
             if (list[i].id == val[n]) {
-              list[i].is_mark = true;
+              list[i].isMark = true;
             }
           }
         }
@@ -512,14 +537,21 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["default"].use(__WEBPACK_IMPORTED_MODULE_1_vue
 
 /***/ }),
 
+/***/ "YtfN":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "eNIl":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_script_index_0_demo_vue__ = __webpack_require__("tH/I");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_4e4a0cdb_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__ = __webpack_require__("lHdV");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_25ac6e86_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__ = __webpack_require__("FWHs");
 function injectStyle (ssrContext) {
-  __webpack_require__("4AlO")
+  __webpack_require__("YtfN")
 }
 var normalizeComponent = __webpack_require__("/Xao")
 /* script */
@@ -536,7 +568,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_script_index_0_demo_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_4e4a0cdb_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_25ac6e86_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -548,27 +580,14 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ "f47t":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"wh_container"},[_c('div',{staticClass:"wh_content_all"},[_c('div',{staticClass:"wh_top_changge"},[_c('li',{on:{"click":_vm.PreMonth}},[_c('div',{staticClass:"wh_jiantou1"})]),_vm._v(" "),_c('li',{staticClass:"wh_content_li"},[_vm._v(_vm._s(_vm.date_top))]),_vm._v(" "),_c('li',{on:{"click":_vm.NextMonth}},[_c('div',{staticClass:"wh_jiantou2"})])]),_vm._v(" "),_c('div',{staticClass:"wh_content"},_vm._l((_vm.text_top),function(tag){return _c('div',{staticClass:"wh_content_item"},[_c('div',[_vm._v("\n          "+_vm._s(tag)+"\n        ")])])})),_vm._v(" "),_c('div',{staticClass:"wh_content"},_vm._l((_vm.list),function(item,index){return _c('div',{staticClass:"wh_content_item",on:{"click":function($event){_vm.clickDay(item,index)}}},[_c('div',[_c('li',{class:{ wh_is_today: item.is_today,
-                                      wh_is_mark:item.is_mark,
-                                      wh_next_day_show:(_vm.isHideOtherday&&item.next_day_show)||item.other_month||item.agoDayHide}},[_vm._v("\n            "+_vm._s(item.id))])])])}))])])}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "fdn2":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_script_index_0_calendar_vue__ = __webpack_require__("KUkg");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_adc6576a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_calendar_vue__ = __webpack_require__("f47t");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_18967135_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_calendar_vue__ = __webpack_require__("unZs");
 function injectStyle (ssrContext) {
-  __webpack_require__("zFg3")
+  __webpack_require__("tZx8")
 }
 var normalizeComponent = __webpack_require__("/Xao")
 /* script */
@@ -585,7 +604,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_script_index_0_calendar_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_adc6576a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_calendar_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_18967135_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_calendar_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -594,17 +613,6 @@ var Component = normalizeComponent(
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
-
-/***/ }),
-
-/***/ "lHdV":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"content"},[_c('Calendar',{ref:"Calendar",attrs:{"markArray":[20,21]},on:{"choseDay":_vm.clickDay,"isToday":_vm.clickToday,"changeMonth":_vm.changeDate}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('h1',{on:{"click":_vm.demo}},[_vm._v("标记了20号21号")])],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -622,6 +630,10 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     data() {
@@ -629,30 +641,43 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
     },
     methods: {
         clickDay(data) {
-            console.log(data); //选中某天
+            console.log('选中了', data); //选中某天
             this.$toast('选中了' + data);
         },
         clickToday(data) {
-            console.log(data); //跳到了本月
+            console.log('跳到了本月', data); //跳到了本月
         },
         changeDate(data) {
             this.$toast('切换到的月份为' + data);
-            console.log(data); //左右点击切换月份
+            console.log('左右点击切换月份', data); //左右点击切换月份
         },
         demo() {
-            //this.$refs.Calendar.ChoseMonth('2017-01');
+            // this.$refs.Calendar.ChoseMonth('2017-12-12',false); //跳到12月12日 但是不选中12月12日
+            this.$refs.Calendar.ChoseMonth('2017-12-12'); //跳到12月12日
         }
     }
 });
 
 /***/ }),
 
-/***/ "zFg3":
+/***/ "tZx8":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
+/***/ }),
+
+/***/ "unZs":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"wh_container"},[_c('div',{staticClass:"wh_content_all"},[_c('div',{staticClass:"wh_top_changge"},[_c('li',{on:{"click":function($event){_vm.PreMonth()}}},[_c('div',{staticClass:"wh_jiantou1"})]),_vm._v(" "),_c('li',{staticClass:"wh_content_li"},[_vm._v(_vm._s(_vm.dateTop))]),_vm._v(" "),_c('li',{on:{"click":function($event){_vm.NextMonth()}}},[_c('div',{staticClass:"wh_jiantou2"})])]),_vm._v(" "),_c('div',{staticClass:"wh_content"},_vm._l((_vm.textTop),function(tag){return _c('div',{staticClass:"wh_content_item"},[_c('div',[_vm._v("\n          "+_vm._s(tag)+"\n        ")])])})),_vm._v(" "),_c('div',{staticClass:"wh_content"},_vm._l((_vm.list),function(item,index){return _c('div',{staticClass:"wh_content_item",on:{"click":function($event){_vm.clickDay(item,index)}}},[_c('div',[((_vm.isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide)?_c('li',{staticClass:"wh_nextDayShow"},[_vm._v("\n            "+_vm._s(item.id)+"\n          ")]):_c('li',{class:{ wh_isToday: item.isToday,
+                                      wh_isMark:item.isMark}},[_vm._v("\n            "+_vm._s(item.id)+"\n          ")])])])}))])])}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
 /***/ })
 
 },["NHnr"]);
-//# sourceMappingURL=app.c45cddc717c41c833592.js.map
+//# sourceMappingURL=app.b82afd4af17272322259.js.map
