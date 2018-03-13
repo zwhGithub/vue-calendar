@@ -152,11 +152,10 @@
       <div class="wh_content">
         <div class="wh_content_item" v-for="(item,index) in list" @click="clickDay(item,index)">
           <div>
-            <li class="wh_nextDayShow" v-if="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide">
+            <li class="wh_nextDayShow" v-if="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide" v-bind:class="{isToday_now:item.isTodayNow}">
               {{item.id}}
             </li>
-            <li v-else="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide" v-bind:class="{ wh_isToday: item.isToday,
-                                        wh_isMark:item.isMark}">
+            <li v-else="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide" v-bind:class="{ wh_isToday: item.isToday,wh_isMark:item.isMark,isTodayNow:item.isTodayNow}">
               {{item.id}}
             </li>
           </div>
@@ -298,6 +297,7 @@
             array = array.concat({
               id: i + 1,
               date: nowTime,
+              isTodayNow: true,
               isToday: true,
               isMark: this.markArray.indexOf(i + 1) >= 0,
               dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
@@ -313,6 +313,7 @@
             array = array.concat({
               id: i + 1,
               date: nowTime,
+              isTodayNow: false,
               isToday: chooseDay == nowTime && isChosedDay,
               isMark: this.markArray.indexOf(i + 1) >= 0,
               dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
