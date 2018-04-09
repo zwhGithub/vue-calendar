@@ -1,13 +1,9 @@
 webpackJsonp([1],{
 
-/***/ "FWHs":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "2f7n":
+/***/ (function(module, exports) {
 
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"content"},[_c('Calendar',{ref:"Calendar",attrs:{"markArray":[20,21]},on:{"choseDay":_vm.clickDay,"isToday":_vm.clickToday,"changeMonth":_vm.changeDate}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('h1',{on:{"click":_vm.demo}},[_vm._v("标记了20号21号")]),_vm._v(" "),_c('div',{staticClass:"div",on:{"click":_vm.demo}},[_vm._v("\n        点击跳到2017-12-12\n    ")])],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -75,7 +71,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__("YaEn");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_toast_component__ = __webpack_require__("kqZI");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_toast_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_toast_component__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_calendar_component__ = __webpack_require__("Rxf0");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_calendar_component__ = __webpack_require__("I/Yx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_calendar_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue_calendar_component__);
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -93,11 +89,22 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["default"].use(__WEBPACK_IMPORTED_MODULE_4_vue
 
 /* eslint-disable no-new */
 new __WEBPACK_IMPORTED_MODULE_0_vue__["default"]({
-    el: '#app',
-    router: __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */],
-    template: '<App/>',
-    components: { App: __WEBPACK_IMPORTED_MODULE_1__App__["a" /* default */] }
+  el: '#app',
+  router: __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */],
+  template: '<App/>',
+  components: { App: __WEBPACK_IMPORTED_MODULE_1__App__["a" /* default */] }
 });
+
+/***/ }),
+
+/***/ "NKl2":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"content"},[_c('Calendar',{ref:"Calendar",attrs:{"markDate":_vm.arr},on:{"choseDay":_vm.clickDay,"changeMonth":_vm.changeDate,"isToday":_vm.clickToday}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('h1',{on:{"click":_vm.demo}},[_vm._v("标记了20号21号")]),_vm._v(" "),_c('div',{staticClass:"div",on:{"click":_vm.demo }},[_vm._v("\n        点击跳到2017-12-12\n    ")])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -141,21 +148,14 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["default"].use(__WEBPACK_IMPORTED_MODULE_1_vue
 
 /***/ }),
 
-/***/ "YtfN":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "eNIl":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_script_index_0_demo_vue__ = __webpack_require__("tH/I");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_25ac6e86_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__ = __webpack_require__("FWHs");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_e510f79e_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__ = __webpack_require__("NKl2");
 function injectStyle (ssrContext) {
-  __webpack_require__("YtfN")
+  __webpack_require__("2f7n")
 }
 var normalizeComponent = __webpack_require__("/Xao")
 /* script */
@@ -172,7 +172,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_script_index_0_demo_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_25ac6e86_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_e510f79e_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -205,7 +205,9 @@ var Component = normalizeComponent(
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     data() {
-        return {};
+        return {
+            arr: ['2018/4/4', '2018/4/6']
+        };
     },
     methods: {
         clickDay(data) {
@@ -223,10 +225,15 @@ var Component = normalizeComponent(
             // this.$refs.Calendar.ChoseMonth('2017-12-12',false); //跳到12月12日 但是不选中12月12日
             this.$refs.Calendar.ChoseMonth('2017-12-12'); //跳到12月12日
         }
+    },
+    created() {
+        setTimeout(() => {
+            this.arr = ['2018/4/4', '2018/4/5'];
+        }, 100);
     }
 });
 
 /***/ })
 
 },["NHnr"]);
-//# sourceMappingURL=app.6e7e6c763caa42164bb8.js.map
+//# sourceMappingURL=app.dab453c7cdc87651b0b1.js.map

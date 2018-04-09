@@ -176,6 +176,7 @@
     },
     props: {
       markArray: { default: '[]' },
+      markDate: { default: '[]' },
       agoDayHide: { default: '0' },
       futureDayHide: { default: '15181550670000' },
       isHideOtherday: { default: false }
@@ -267,7 +268,6 @@
         if (month2 < 10) {
           month2 = '0' + month2;
         }
-
         var t2 = year2 + '/' + month2 + '/' + day2;
         return new Date(t2);
       },
@@ -299,7 +299,7 @@
               date: nowTime,
               isTodayNow: true,
               isToday: true,
-              isMark: this.markArray.indexOf(i + 1) >= 0,
+              isMark: this.markArray.indexOf(i + 1) >= 0 || this.markDate.indexOf(nowTime) >= 0,
               dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
               nextDayShow:
                 new Date(nowTime).getTime() >
@@ -315,7 +315,7 @@
               date: nowTime,
               isTodayNow: false,
               isToday: chooseDay == nowTime && isChosedDay,
-              isMark: this.markArray.indexOf(i + 1) >= 0,
+              isMark: this.markArray.indexOf(i + 1) >= 0 || this.markDate.indexOf(nowTime) >= 0,
               dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
               nextDayShow:
                 new Date(nowTime).getTime() >
@@ -375,6 +375,19 @@
           if (list[i].date) {
             for (var n = 0; n < val.length; n++) {
               if (list[i].id == val[n]) {
+                list[i].isMark = true;
+              }
+            }
+          }
+        }
+        this.list = list;
+      }, markDate(val, oldVal) {
+        var list = this.list;
+        for (var i = 0; i < list.length; i++) {
+          list[i].isMark = false;
+          if (list[i].date) {
+            for (var n = 0; n < val.length; n++) {
+              if (list[i].date == val[n]) {
                 list[i].isMark = true;
               }
             }
