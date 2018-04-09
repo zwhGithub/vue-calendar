@@ -38,8 +38,8 @@ Vue.use(Calendar);
       v-on:choseDay="clickDay"
       v-on:changeMonth="changeDate"
       // v-on:isToday="clickToday"
-      :markArray=[20,21] //标记的日期
-      :markDate=arr // arr=['2018/4/1','2018/4/3'] 标记4月1日和4月3日
+      // :markArray=[20,21] //标记的日期
+      // :markDate=arr // arr=['2018/4/1','2018/4/3'] 标记4月1日和4月3日
       //第一个标记和第二个标记不能同时使用
       // isHideOtherday=false  //超过今天也不允许点击
       // :agoDayHide='1514937600000' //某个日期以前的不允许点击  时间戳13位
