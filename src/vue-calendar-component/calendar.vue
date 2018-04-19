@@ -152,10 +152,10 @@
       <div class="wh_content">
         <div class="wh_content_item" v-for="(item,index) in list" @click="clickDay(item,index)">
           <div>
-            <li class="wh_nextDayShow" v-if="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide" v-bind:class="{isToday_now:item.isTodayNow}">
+            <li class="wh_nextDayShow" v-if="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide" v-bind:class="[{isToday_now:item.isTodayNow},getClass(item)]">
               {{item.id}}
             </li>
-            <li v-else="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide" v-bind:class="{ wh_isToday: item.isToday,wh_isMark:item.isMark,isTodayNow:item.isTodayNow}">
+            <li v-else="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide" v-bind:class="[{ wh_isToday: item.isToday,wh_isMark:item.isMark,isTodayNow:item.isTodayNow},getClass(item)]">
               {{item.id}}
             </li>
           </div>
@@ -177,6 +177,7 @@
     props: {
       markArray: { default: '[]' },
       markDate: { default: '[]' },
+      markDateMore: { default: '[]' },
       agoDayHide: { default: '0' },
       futureDayHide: { default: '15181550670000' },
       isHideOtherday: { default: false }
@@ -185,6 +186,11 @@
       this.myData = new Date();
     },
     methods: {
+      getClass(data) {
+        let obj = {};
+        obj[data.markClassName] = data.markClassName;
+        return obj;
+      },
       clickDay: function (item, index) {
         if (!(this.isHideOtherday && item.nextDayShow) && !item.dayHide) {
           this.$emit('choseDay', item.date);
@@ -243,6 +249,9 @@
         if (month2 < 10) {
           month2 = '0' + month2;
         }
+        if (day2 < 10) {
+          day2 = '0' + day2;
+        }
         var t2 = year2 + '/' + month2 + '/' + day2;
         return new Date(t2);
       },
@@ -268,6 +277,9 @@
         if (month2 < 10) {
           month2 = '0' + month2;
         }
+        if (day2 < 10) {
+          day2 = '0' + day2;
+        }
         var t2 = year2 + '/' + month2 + '/' + day2;
         return new Date(t2);
       },
@@ -290,6 +302,12 @@
         var array = [];
         for (var i = 0; i < this.getDaysInOneMonth(date); i++) {
           var nowTime = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1);
+          var markClassName = "";
+          for (const k of this.markDateMore) {
+            if (k.date == nowTime) {
+              markClassName = k.className;
+            }
+          }
           if (
             this.dateFormat(new Date()) ==
             this.dateFormat(new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1))) && !chooseDay
@@ -301,6 +319,7 @@
               isToday: true,
               isMark: this.markArray.indexOf(i + 1) >= 0 || this.markDate.indexOf(nowTime) >= 0,
               dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
+              markClassName: markClassName,
               nextDayShow:
                 new Date(nowTime).getTime() >
                 new Date().getTime()
@@ -317,6 +336,7 @@
               isToday: chooseDay == nowTime && isChosedDay,
               isMark: this.markArray.indexOf(i + 1) >= 0 || this.markDate.indexOf(nowTime) >= 0,
               dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
+              markClassName: markClassName,
               nextDayShow:
                 new Date(nowTime).getTime() >
                 new Date().getTime()
@@ -345,7 +365,7 @@
         var _length = 7 - array.length % 7;
         if (_length < 7) {
           var nowTime = nextDate.getFullYear() + '/' + (nextDate.getMonth() + 1) + '/' + (i + 1);
-          for (let i = 0; i < _length; i++) {
+          for (var i = 0; i < _length; i++) {
             array.push({
               id: i + 1,
               date: nextDate.getFullYear() + '/' + (nextDate.getMonth() + 1) + '/' + (i + 1),
@@ -369,31 +389,13 @@
     },
     watch: {
       markArray(val, oldVal) {
-        var list = this.list;
-        for (var i = 0; i < list.length; i++) {
-          list[i].isMark = false;
-          if (list[i].date) {
-            for (var n = 0; n < val.length; n++) {
-              if (list[i].id == val[n]) {
-                list[i].isMark = true;
-              }
-            }
-          }
-        }
-        this.list = list;
-      }, markDate(val, oldVal) {
-        var list = this.list;
-        for (var i = 0; i < list.length; i++) {
-          list[i].isMark = false;
-          if (list[i].date) {
-            for (var n = 0; n < val.length; n++) {
-              if (list[i].date == val[n]) {
-                list[i].isMark = true;
-              }
-            }
-          }
-        }
-        this.list = list;
+        this.getList(this.myData);
+      },
+      markDate(val, oldVal) {
+        this.getList(this.myData);
+      },
+      markDateMore(val, oldVal) {
+        this.getList(this.myData);
       }
     }
   };
