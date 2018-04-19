@@ -3,7 +3,7 @@
         <!-- agoDayHide='1517483961000' -->
         <!-- futureDayHide="1526054400000" -->
         <!-- isHideOtherday=false -->
-        <Calendar ref="Calendar" v-on:choseDay="clickDay" v-on:changeMonth="changeDate" v-on:isToday="clickToday" :markDate=arr></Calendar>
+        <Calendar :markDateMore="arr"></Calendar>
         <br/>
         <h1 @click="demo">标记了20号21号</h1>
         <div class="div" @click="demo ">
@@ -16,7 +16,7 @@
     export default {
         data() {
             return {
-                arr: ['2018/4/4', '2018/4/6']
+                arr: []
             }
         },
         methods: {
@@ -38,8 +38,17 @@
         },
         created() {
             setTimeout(() => {
-                this.arr = ['2018/4/4', '2018/4/5'];
-            }, 100)
+                this.arr = [{
+                    date: '2018/4/1',
+                    className: "mark1"
+                }, {
+                    date: '2018/4/13',
+                    className: "mark2"
+                }, {
+                    date: '2018/4/25',
+                    className: "mark3"
+                }];
+            }, 200)
         }
     }
 </script>
@@ -60,5 +69,17 @@
         font-size: 17px;
         text-align: center;
         margin-top: 20px;
+    }
+
+    .mark1 {
+        background-color: red;
+    }
+
+    .mark2 {
+        background-color: yellow;
+    }
+
+    .mark3 {
+        background-color: blue;
     }
 </style>
