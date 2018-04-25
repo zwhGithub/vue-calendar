@@ -152,10 +152,10 @@
       <div class="wh_content">
         <div class="wh_content_item" v-for="(item,index) in list" @click="clickDay(item,index)">
           <div>
-            <li class="wh_nextDayShow" v-if="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide" v-bind:class="[{isToday_now:item.isTodayNow},getClass(item)]">
+            <li class="wh_nextDayShow" v-if="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide" v-bind:class="[{isToday_now:item.isTodayNow},setClass(item)]">
               {{item.id}}
             </li>
-            <li v-else="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide" v-bind:class="[{ wh_isToday: item.isToday,wh_isMark:item.isMark,isTodayNow:item.isTodayNow},getClass(item)]">
+            <li v-else="(isHideOtherday&&item.nextDayShow)||item.otherMonth||item.dayHide" v-bind:class="[{ wh_isToday: item.isToday,wh_isMark:item.isMark,isTodayNow:item.isTodayNow},setClass(item)]">
               {{item.id}}
             </li>
           </div>
@@ -175,7 +175,6 @@
       };
     },
     props: {
-      markArray: { default: '[]' },
       markDate: { default: '[]' },
       markDateMore: { default: '[]' },
       agoDayHide: { default: '0' },
@@ -186,7 +185,7 @@
       this.myData = new Date();
     },
     methods: {
-      getClass(data) {
+      setClass(data) {
         let obj = {};
         obj[data.markClassName] = data.markClassName;
         return obj;
@@ -199,7 +198,7 @@
           item.otherMonth < 0 ? this.PreMonth(item.date) : this.NextMonth(item.date);
         } else {
           if (!(this.isHideOtherday && item.nextDayShow) && !item.dayHide) {
-            for (var i = 0; i < this.list.length; i++) {
+            for (let i = 0; i < this.list.length; i++) {
               if (i == index) {
                 this.list[i].isToday = true;
               } else {
@@ -228,20 +227,20 @@
         this.getList(this.myData, date, isChosedDay);
       },
       getPreMonth: function (date) {
-        var timeArray = this.dateFormat(date).split('/');
-        var year = timeArray[0];
-        var month = timeArray[1];
-        var day = timeArray[2];
-        var days = new Date(year, month, 0);
+        let timeArray = this.dateFormat(date).split('/');
+        let year = timeArray[0];
+        let month = timeArray[1];
+        let day = timeArray[2];
+        let days = new Date(year, month, 0);
         days = days.getDate();
-        var year2 = year;
-        var month2 = parseInt(month) - 1;
+        let year2 = year;
+        let month2 = parseInt(month) - 1;
         if (month2 == 0) {
           year2 = parseInt(year2) - 1;
           month2 = 12;
         }
-        var day2 = day;
-        var days2 = new Date(year2, month2, 0);
+        let day2 = day;
+        let days2 = new Date(year2, month2, 0);
         days2 = days2.getDate();
         if (day2 > days2) {
           day2 = days2;
@@ -252,24 +251,24 @@
         if (day2 < 10) {
           day2 = '0' + day2;
         }
-        var t2 = year2 + '/' + month2 + '/' + day2;
+        let t2 = year2 + '/' + month2 + '/' + day2;
         return new Date(t2);
       },
       getNextMonth: function (date) {
-        var arr = this.dateFormat(date).split('/');
-        var year = arr[0]; //获取当前日期的年份
-        var month = arr[1]; //获取当前日期的月份
-        var day = arr[2]; //获取当前日期的日
-        var days = new Date(year, month, 0);
+        let arr = this.dateFormat(date).split('/');
+        let year = arr[0]; //获取当前日期的年份
+        let month = arr[1]; //获取当前日期的月份
+        let day = arr[2]; //获取当前日期的日
+        let days = new Date(year, month, 0);
         days = days.getDate(); //获取当前日期中的月的天数
-        var year2 = year;
-        var month2 = parseInt(month) + 1;
+        let year2 = year;
+        let month2 = parseInt(month) + 1;
         if (month2 == 13) {
           year2 = parseInt(year2) + 1;
           month2 = 1;
         }
-        var day2 = day;
-        var days2 = new Date(year2, month2, 0);
+        let day2 = day;
+        let days2 = new Date(year2, month2, 0);
         days2 = days2.getDate();
         if (day2 > days2) {
           day2 = days2;
@@ -280,96 +279,100 @@
         if (day2 < 10) {
           day2 = '0' + day2;
         }
-        var t2 = year2 + '/' + month2 + '/' + day2;
+        let t2 = year2 + '/' + month2 + '/' + day2;
         return new Date(t2);
       },
-      getDaysInOneMonth: function (date) {//天数
-        var getyear = date.getFullYear();
-        var getmonth = date.getMonth() + 1;
-        getmonth = parseInt(getmonth, 10);
-        var d = new Date(getyear, getmonth, 0);
+      getDaysInOneMonth: function (date) {//当前月的天数
+        let getyear = date.getFullYear();
+        let getmonth = date.getMonth() + 1;
+        let d = new Date(getyear, getmonth, 0);
         return d.getDate();
       },
-      getMonthweek: function (date) {
-        var getyear = date.getFullYear();
-        var getmonth = date.getMonth() + 1;
-        var dateOne = new Date(getyear + '/' + getmonth + '/1');
+      getMonthweek: function (date) { //向前空几个
+        let getyear = date.getFullYear();
+        let getmonth = date.getMonth() + 1;
+        let dateOne = new Date(getyear + '/' + getmonth + '/1');
         return dateOne.getDay() == 0 ? 6 : dateOne.getDay() - 1;
       },
       getList: function (date, chooseDay, isChosedDay = true) {
-        var mygetMonth = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
+        const mygetMonth = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
         this.dateTop = date.getFullYear() + '年' + mygetMonth + '月';
-        var array = [];
-        for (var i = 0; i < this.getDaysInOneMonth(date); i++) {
-          var nowTime = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1);
-          var markClassName = "";
+        let array = [];
+        const onMonthDays = this.getDaysInOneMonth(date);
+        for (let i = 0; i < onMonthDays; i++) {
+          const nowTime = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1);
+          let markClassName = "";
           for (const k of this.markDateMore) {
             if (k.date == nowTime) {
               markClassName = k.className;
             }
           }
-          if (
-            this.dateFormat(new Date()) ==
-            this.dateFormat(new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1))) && !chooseDay
-          ) {
-            array = array.concat({
-              id: i + 1,
-              date: nowTime,
+          let listObj = {
+            id: i + 1,
+            date: nowTime,
+            isMark: this.markDate.indexOf(nowTime) >= 0,
+            dayHide: new Date(nowTime).getTime() / 1000 < parseInt(this.agoDayHide) || new Date(nowTime).getTime() / 1000 > parseInt(this.futureDayHide),
+            markClassName: markClassName,
+            nextDayShow:
+              new Date(nowTime).getTime() >
+              new Date().getTime()
+          }
+          if (this.dateFormat(new Date()) == this.dateFormat(new Date(nowTime)) && !chooseDay) {
+            listObj = Object.assign(listObj, {
               isTodayNow: true,
               isToday: true,
-              isMark: this.markArray.indexOf(i + 1) >= 0 || this.markDate.indexOf(nowTime) >= 0,
-              dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
-              markClassName: markClassName,
-              nextDayShow:
-                new Date(nowTime).getTime() >
-                new Date().getTime()
-            });
+            })
             this.$emit(
               'isToday',
-              this.dateFormat(new Date(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + (i + 1)))
+              this.dateFormat(nowTime)
             );
-          } else {
-            array = array.concat({
-              id: i + 1,
-              date: nowTime,
-              isTodayNow: false,
-              isToday: chooseDay == nowTime && isChosedDay,
-              isMark: this.markArray.indexOf(i + 1) >= 0 || this.markDate.indexOf(nowTime) >= 0,
-              dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
-              markClassName: markClassName,
-              nextDayShow:
-                new Date(nowTime).getTime() >
-                new Date().getTime()
-            });
           }
+          else {
+            listObj = Object.assign(listObj, {
+              isTodayNow: false,
+              isToday: chooseDay == nowTime && isChosedDay
+            })
+          }
+          array.push(listObj);
         }
-        var array2 = [];
-        var num = this.getDaysInOneMonth(this.getPreMonth(date)) - this.getMonthweek(date) + 1;
-        var preDate = this.getPreMonth(date);
-        var nextDate = this.getNextMonth(date);
+        const leftArr = this.getLeftArr(date);
+        const rightArr = this.getRightArr(date, array);
+        array = [...leftArr, ...array, ...rightArr];
+        this.list = array;
+      },
+      getLeftArr: function (date) {
+        let array = [];
+        const leftNum = this.getMonthweek(date);
+        const num = this.getDaysInOneMonth(this.getPreMonth(date)) - leftNum + 1;
+        const preDate = this.getPreMonth(date);
         //上个月多少开始
-        for (var i = 0; i < this.getMonthweek(date); i++) {
-          var nowTime = preDate.getFullYear() + '/' + (preDate.getMonth() + 1) + '/' + (num + i);
-          array2 = array2.concat(
+        for (let i = 0; i < leftNum; i++) {
+          const nowTime = preDate.getFullYear() + '/' + (preDate.getMonth() + 1) + '/' + (num + i);
+          array.push(
             {
               id: num + i,
               date: nowTime,
-              dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
+              dayHide: new Date(nowTime).getTime() / 1000 < parseInt(this.agoDayHide) || new Date(nowTime).getTime() / 1000 > parseInt(this.futureDayHide),
               nextDayShow:
                 new Date(nowTime).getTime() >
                 new Date().getTime(),
               otherMonth: -1
             });
         }
-        array = array2.concat(array);
-        var _length = 7 - array.length % 7;
+        return array;
+      },
+      getRightArr: function (date, arr) {
+        let array = [];
+        const nextDate = this.getNextMonth(date);
+        const _length = 7 - arr.length % 7;
+        //向后添加数据
         if (_length < 7) {
-          var nowTime = nextDate.getFullYear() + '/' + (nextDate.getMonth() + 1) + '/' + (i + 1);
-          for (var i = 0; i < _length; i++) {
+          for (let i = 0; i < _length; i++) {
+            const nowTime = nextDate.getFullYear() + '/' + (nextDate.getMonth() + 1) + '/' + (i + 1);
             array.push({
               id: i + 1,
               date: nextDate.getFullYear() + '/' + (nextDate.getMonth() + 1) + '/' + (i + 1),
-              dayHide: new Date(nowTime).getTime() < parseInt(this.agoDayHide) || new Date(nowTime).getTime() > parseInt(this.futureDayHide),
+              dayHide: new Date(nowTime).getTime() / 1000 < parseInt(this.agoDayHide) || new Date(nowTime).getTime() / 1000 > parseInt(this.futureDayHide),
               nextDayShow:
                 new Date(nowTime).getTime() >
                 new Date().getTime(),
@@ -377,7 +380,7 @@
             });
           }
         }
-        this.list = array;
+        return array;
       },
       dateFormat: function (date) {
         date = new Date(date)
@@ -388,9 +391,6 @@
       this.getList(this.myData);
     },
     watch: {
-      markArray(val, oldVal) {
-        this.getList(this.myData);
-      },
       markDate(val, oldVal) {
         this.getList(this.myData);
       },

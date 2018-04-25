@@ -29,23 +29,23 @@ cnpm i vue-calendar-component --save  //国内镜像
 ## Usage
 
 ```javascript
-//main.js中引入
-
+//vue文件中引入
 import Calendar from 'vue-calendar-component';
-Vue.use(Calendar);
 
+ components: {
+    Calendar
+  }
     <Calendar
       v-on:choseDay="clickDay"
       v-on:changeMonth="changeDate"
       // v-on:isToday="clickToday"
-      // :markArray=[20,21] //标记的日期
-      // :markDate=arr // arr=['2018/4/1','2018/4/3'] 标记4月1日和4月3日
+      // :markDate=arr // arr=['2018/4/1','2018/4/3'] 标记4月1日和4月3日 简单标记
+      //:markDateMore=arr // 多种不同的标记
       //第一个标记和第二个标记不能同时使用
       // isHideOtherday=false  //超过今天也不允许点击
-      // :agoDayHide='1514937600000' //某个日期以前的不允许点击  时间戳13位
-      // :futureDayHide='1525104000000' //某个日期以后的不允许点击  时间戳13位
+      // :agoDayHide='1514937600' //某个日期以前的不允许点击  时间戳10位
+      // :futureDayHide='1525104000' //某个日期以后的不允许点击  时间戳10位
     ></Calendar>
-
 
     clickDay(data) {
       console.log(data); //选中某天
@@ -56,20 +56,24 @@ Vue.use(Calendar);
     clickToday(data) {
       console.log(data); //跳到了本月
     }
+
+  // 多个标记示例
+  arr=[{date:'2018/4/1',className:"mark1"}, {date:'2018/4/13',className:"mark2"}];
+  //4月1 标记的className是mark1 根据class做出一些标记样式
 ```
 
 ### API
 
-| 属性           | 说明                                                                                              |  默认  | 是否必传 |
-| :------------- | :------------------------------------------------------------------------------------------------ | :----: | :------: |
-| choseDay       | 选中某天调用的方法，返回选中的日期 YY-MM-DD                                                       |   无   |    否    |
-| changeMonth    | 切换月份调用的方法，返回切换到某月的日期 YY-MM-DD                                                 |   无   |    否    |
-| isToday        | 切换月份的时候，如果切到当前月份，调用这个方法，返回当前月今天                                    |   无   |    否    |
-| markArray      | 如果需要某月的几天被标注，传当月的日期数组。如[2,6,8]当月 2 号 6 号 8 号被会标注                  | 空数组 |    否    |
-| markDate       | 如果需要某月的几天被标注，传当日期数组。如['2018/4/1','2018/4/3']当 4 月 1 号和 4 月 3 号被会标注 | 空数组 |    否    |
-| isHideOtherday | 超过今天的日期是否可以被点击，true 是不可以点击，false 是可以点击                                 | false  |    否    |
-| agoDayHide     | 某个日期以前的不允许点击 时间戳长度是 13 位                                                       |   0    |    否    |
-| futureDayHide  | 某个日期以后的不允许点击 时间戳长度是 13 位                                                       |  很大  |    否    |
+| 属性           | 说明                                                         |  默认  | 是否必传 |
+| :------------- | :----------------------------------------------------------- | :----: | :------: |
+| choseDay       | 选中某天调用的方法，返回选中的日期 YY-MM-DD                  |   无   |    否    |
+| changeMonth    | 切换月份调用的方法，返回切换到某月的日期 YY-MM-DD            |   无   |    否    |
+| isToday        | 切换月份的时候，如果切到当前月份，调用这个方法，返回当前月今天 |   无   |    否    |
+| markArray      | 如果需要某月的几天被标注，传当月的日期数组。如[2,6,8]当月 2 号 6 号 8 号被会标注（相同的标记） | 空数组 |    否    |
+| markDateMore   | 需要不同的标记如上Usage 最后一行示例代码                     | 空数组 |    否    |
+| isHideOtherday | 超过今天的日期是否可以被点击，true 是不可以点击，false 是可以点击 | false  |    否    |
+| agoDayHide     | 某个日期以前的不允许点击 时间戳长度是 10 位                  |   0    |    否    |
+| futureDayHide  | 某个日期以后的不允许点击 时间戳长度是 10 位                  |  很大  |    否    |
 
 ```javascript
 ✅ 在 Calendar标签上添加 ref 属性, 暴露出三个方法可以  直接切换月份
