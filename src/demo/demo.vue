@@ -1,11 +1,13 @@
 <template>
     <div class="content">
-        <!-- agoDayHide='1517483961000' -->
-        <!-- futureDayHide="1526054400000" -->
+        <!-- agoDayHide='1517483961' -->
+        <!-- futureDayHide="1526054400" -->
         <!-- isHideOtherday=false -->
-        <Calendar :markDateMore="arr"></Calendar>
+        <Calendar ref="Calendar" :markDateMore="arr"></Calendar>
         <br/>
-        <h1 @click="demo">标记了20号21号</h1>
+        <h3 @click="demo">markDateMore标记不同风格：：1号2号一种风格====13号另一种风格</h3>
+        <br>
+        <h3>markArray 标记了单一风格 更简单</h3>
         <div class="div" @click="demo ">
             点击跳到2017-12-12
         </div>
@@ -13,11 +15,25 @@
 </template>
 
 <script>
+    // import Calendar from '../vue-calendar-component/index';
+    import Calendar from 'vue-calendar-component';
     export default {
         data() {
             return {
-                arr: []
+                arr: [{
+                    date: '2018/4/1',
+                    className: "mark1"
+                }, {
+                    date: '2018/4/2',
+                    className: "mark1"
+                }, {
+                    date: '2018/4/13',
+                    className: "mark2"
+                }]
             }
+        },
+        components: {
+            Calendar
         },
         methods: {
             clickDay(data) {
@@ -37,26 +53,30 @@
             }
         },
         created() {
-            setTimeout(() => {
-                this.arr = [{
-                    date: '2018/4/1',
-                    className: "mark1"
-                }, {
-                    date: '2018/4/13',
-                    className: "mark2"
-                }, {
-                    date: '2018/4/25',
-                    className: "mark3"
-                }];
-            }, 200)
+            function format(date, index) {
+                date = new Date(date);
+                return `${date.getFullYear()}/${date.getMonth() + 1}/${index}`;
+            }
+            this.arr = [{
+                date: format(new Date(), 1),
+                className: "mark1"
+            }, {
+                date: format(new Date(), 2),
+                className: "mark1"
+            }, {
+                date: format(new Date(), 13),
+                className: "mark2"
+            }]
         }
     }
 </script>
 
 <!-- Add "scoped " attribute to limit CSS to this component only -->
 <style>
-    h1 {
+    h3 {
         text-align: center;
+        width: 90%;
+        margin: auto;
     }
 
     .div {
@@ -76,10 +96,6 @@
     }
 
     .mark2 {
-        background-color: yellow;
-    }
-
-    .mark3 {
         background-color: blue;
     }
 </style>
