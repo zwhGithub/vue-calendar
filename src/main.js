@@ -8,10 +8,6 @@ Vue.config.productionTip = false;
 import Toast from 'vue-toast-component';
 Vue.use(Toast);
 
-// import Calendar from 'vue-calendar-component';
-import Calendar from './vue-calendar-component/index';
-Vue.use(Calendar);
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
