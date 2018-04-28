@@ -7,7 +7,7 @@
         <br/>
         <h3 @click="demo">markDateMore标记不同风格：：1号2号一种风格====13号另一种风格</h3>
         <br>
-        <h3>markArray 标记了单一风格 更简单</h3>
+        <h3>markDate 标记了单一风格 更简单</h3>
         <div class="div" @click="demo ">
             点击跳到2017-12-12
         </div>
