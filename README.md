@@ -42,7 +42,7 @@ import Calendar from 'vue-calendar-component';
       // :markDate=arr // arr=['2018/4/1','2018/4/3'] 标记4月1日和4月3日 简单标记
       //:markDateMore=arr // 多种不同的标记
       //第一个标记和第二个标记不能同时使用
-      // isHideOtherday=false  //超过今天也不允许点击
+      
       // :agoDayHide='1514937600' //某个日期以前的不允许点击  时间戳10位
       // :futureDayHide='1525104000' //某个日期以后的不允许点击  时间戳10位
     ></Calendar>
@@ -71,7 +71,6 @@ import Calendar from 'vue-calendar-component';
 | isToday        | 切换月份的时候，如果切到当前月份，调用这个方法，返回当前月今天 |   无   |    否    |
 | markDate      | 如果需要某月的几天被标注，传当月的日期数组。如[2,6,8]当月 2 号 6 号 8 号被会标注（相同的标记） | 空数组 |    否    |
 | markDateMore   | 需要不同的标记如上Usage 最后一行示例代码                     | 空数组 |    否    |
-| isHideOtherday | 超过今天的日期是否可以被点击，true 是不可以点击，false 是可以点击 | false  |    否    |
 | agoDayHide     | 某个日期以前的不允许点击 时间戳长度是 10 位                  |   0    |    否    |
 | futureDayHide  | 某个日期以后的不允许点击 时间戳长度是 10 位                  |  很大  |    否    |
 
@@ -81,8 +80,8 @@ import Calendar from 'vue-calendar-component';
 
       ✅ this.$refs.Calendar.PreMonth();  //调用方法实现转到上个月
       ✅ this.$refs.Calendar.NextMonth(); //调用方法实现转到下个月
-      ✅ this.$refs.Calendar.ChoseMonth('2017-01-01'); //调用方法实现转到某个月
-      ✅ this.$refs.Calendar.ChoseMonth('2017-01-01',false); //跳转到17年12月12日 但是不选中当天
+      ✅ this.$refs.Calendar.ChoseMonth('2018-12-12'); //调用方法实现转到某个月
+      ✅ this.$refs.Calendar.ChoseMonth('2018-12-12',false); //跳转到18年12月12日 但是不选中当天
       //第二个参数 false表示不选中日期
 ```
 
