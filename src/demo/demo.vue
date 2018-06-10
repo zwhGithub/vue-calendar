@@ -14,8 +14,8 @@
 </template>
 
 <script>
-// import Calendar from '../vue-calendar-component/index';
-import Calendar from 'vue-calendar-component';
+import Calendar from '../vue-calendar-component/index';
+// import Calendar from 'vue-calendar-component';
 export default {
   data() {
     return {
@@ -75,7 +75,6 @@ export default {
       }
     ];
     this.arr2 = [format(new Date(), 23)]
-    console.log(this.arr2)
   }
 };
 </script>
