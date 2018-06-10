@@ -1,4 +1,10 @@
 <style>
+@media screen and (min-width: 460px) {
+  .wh_item_date:hover {
+    background: #71c7a5;
+    cursor: pointer;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -83,13 +89,6 @@ wh_content_item_tag {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-@media screen and (min-width: 460px) {
-  zwhgithub.wh_item_date:hover {
-    background: #71c7a5;
-    cursor: pointer;
-  }
 }
 
 .wh_jiantou1 {
