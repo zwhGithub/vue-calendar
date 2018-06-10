@@ -1,13 +1,9 @@
 webpackJsonp([1],{
 
-/***/ "5RHE":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "BCKA":
+/***/ (function(module, exports) {
 
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"content"},[_c('Calendar',{ref:"Calendar",attrs:{"markDateMore":_vm.arr,"agoDayHide":"1530115200"},on:{"isToday":_vm.clickToday,"choseDay":_vm.clickDay,"changeMonth":_vm.changeDate}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('h3',{on:{"click":_vm.demo}},[_vm._v("markDateMore标记不同风格：：1号2号一种风格====13号另一种风格")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('h3',[_vm._v("markDate 标记了单一风格 更简单")]),_vm._v(" "),_c('div',{staticClass:"div",on:{"click":_vm.demo }},[_vm._v("\n    点击跳到2018-12-12\n  ")])],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -140,9 +136,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["default"].use(__WEBPACK_IMPORTED_MODULE_1_vue
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_script_index_0_demo_vue__ = __webpack_require__("tH/I");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_3f18a004_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__ = __webpack_require__("5RHE");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_44fbc036_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__ = __webpack_require__("keW/");
 function injectStyle (ssrContext) {
-  __webpack_require__("rZJN")
+  __webpack_require__("BCKA")
 }
 var normalizeComponent = __webpack_require__("/Xao")
 /* script */
@@ -159,7 +155,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_script_index_0_demo_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_3f18a004_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_5_0_vue_loader_lib_template_compiler_index_id_data_v_44fbc036_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_13_5_0_vue_loader_lib_selector_type_template_index_0_demo_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -171,10 +167,14 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ "rZJN":
-/***/ (function(module, exports) {
+/***/ "keW/":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"content"},[_c('Calendar',{ref:"Calendar",attrs:{"markDateMore":_vm.arr,"markDate":_vm.arr2,"agoDayHide":"1530115200"},on:{"isToday":_vm.clickToday,"choseDay":_vm.clickDay,"changeMonth":_vm.changeDate}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('h3',{on:{"click":_vm.demo}},[_vm._v("markDateMore标记不同风格：：1号2号一种风格====13号另一种风格")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('h3',[_vm._v("markDate 标记23号 单一风格 更简单")]),_vm._v(" "),_c('div',{staticClass:"div",on:{"click":_vm.demo }},[_vm._v("\n    点击跳到2018-12-12\n  ")])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -182,7 +182,7 @@ var Component = normalizeComponent(
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_calendar_component__ = __webpack_require__("PJMO");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_calendar_component__ = __webpack_require__("88dr");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_calendar_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_calendar_component__);
 //
 //
@@ -205,7 +205,7 @@ var Component = normalizeComponent(
 /* harmony default export */ __webpack_exports__["a"] = ({
   data() {
     return {
-      markTim: ['2018/6/1'],
+      arr2: ['2018-6-23'],
       arr: [{
         date: '2018/6/1',
         className: 'mark1'
@@ -234,14 +234,13 @@ var Component = normalizeComponent(
       console.log('左右点击切换月份', data); //左右点击切换月份
     },
     demo() {
-      this.$refs.Calendar.ChoseMonth('2018-12-12'); //跳到12月12日 但是不选中12月12日
-      // this.$refs.Calendar.ChoseMonth('2018-12-12'); //跳到12月12日
+      this.$refs.Calendar.ChoseMonth('2018-12-12'); //跳到12月12日选中12月12日
     }
   },
   created() {
     function format(date, index) {
       date = new Date(date);
-      return `${date.getFullYear()}/${date.getMonth() + 1}/${index}`;
+      return `${date.getFullYear()}-${date.getMonth() + 1}-${index}`;
     }
     this.arr = [{
       date: format(new Date(), 1),
@@ -253,10 +252,12 @@ var Component = normalizeComponent(
       date: format(new Date(), 13),
       className: 'mark2'
     }];
+    this.arr2 = [format(new Date(), 23)];
+    console.log(this.arr2);
   }
 });
 
 /***/ })
 
 },["NHnr"]);
-//# sourceMappingURL=app.7c2c5c3b50a7dc13109c.js.map
+//# sourceMappingURL=app.e77f1d52ea8cdf6788f4.js.map
