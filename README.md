@@ -15,7 +15,7 @@
 
 ## 效果
 
-![效果](https://zwhgithub.github.io/vue-calendar/dist/WechatIMG4885.jpeg)
+![效果](https://zwhgithub.github.io/vue-calendar/dist/WechatIMG4885.jpeg =320x568)
 
 * 🎉 觉得好用给一个 star 哦~~ 🎉
 
