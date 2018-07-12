@@ -236,13 +236,14 @@ export default {
     },
     forMatArgs: function () {
       let markDate = this.markDate;
-      for (let i = 0; i < markDate.length; i++) {
-        markDate[i] = timeUtil.dateFormat(markDate[i]);
-      }
       let markDateMore = this.markDateMore;
-      for (let i = 0; i < markDateMore.length; i++) {
-        markDateMore[i].date = timeUtil.dateFormat(markDateMore[i].date);
-      }
+      markDate = markDate.map((k) => {
+        return timeUtil.dateFormat(k);
+      })
+      markDateMore = markDateMore.map((k) => {
+        k.date = timeUtil.dateFormat(k.date)
+        return k;
+      })
       return [markDate, markDateMore];
     },
     getList: function (date, chooseDay, isChosedDay = true) {

@@ -19,14 +19,11 @@ import Calendar from '../vue-calendar-component/index';
 export default {
   data() {
     return {
-      arr2: ['2018-6-23'],
+      // arr2: ['2018/6/23'],
+      arr2: [],
       arr: [
         {
           date: '2018/6/1',
-          className: 'mark1'
-        },
-        {
-          date: '2018/6/2',
           className: 'mark1'
         },
         {
@@ -52,13 +49,13 @@ export default {
       console.log('左右点击切换月份', data); //左右点击切换月份
     },
     demo() {
-      this.$refs.Calendar.ChoseMonth('2018-12-12'); //跳到12月12日选中12月12日
+      this.$refs.Calendar.ChoseMonth('2018-12-13'); //跳到12月12日选中12月12日
     }
   },
   created() {
     function format(date, index) {
       date = new Date(date);
-      return `${date.getFullYear()}-${date.getMonth() + 1}-${index}`;
+      return `${date.getFullYear()}/${date.getMonth() + 1}/${index}`;
     }
     this.arr = [
       {
@@ -66,15 +63,10 @@ export default {
         className: 'mark1'
       },
       {
-        date: format(new Date(), 2),
-        className: 'mark1'
-      },
-      {
         date: format(new Date(), 13),
         className: 'mark2'
       }
     ];
-    this.arr2 = [format(new Date(), 23)]
   }
 };
 </script>
