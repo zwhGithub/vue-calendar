@@ -15,7 +15,7 @@
 
 ## 效果
 
-![效果](https://qiniu.epipe.cn/5465939501580804096?imageView2/1/w/290/h/470)
+![效果](https://zwhgithub.github.io/vue-calendar/dist/WechatIMG4885.jpeg)
 
 * 🎉 觉得好用给一个 star 哦~~ 🎉
 
@@ -82,7 +82,7 @@ import Calendar from 'vue-calendar-component';
       ✅ this.$refs.Calendar.NextMonth(); //调用方法实现转到下个月
       ✅ this.$refs.Calendar.ChoseMonth('2018-12-12'); //调用方法实现转到某个月
       ✅ this.$refs.Calendar.ChoseMonth('2018-12-12',false); //跳转到18年12月12日 但是不选中当天
-      //第二个参数 false表示不选中日期
+      //第二个参数 false表示不选中日期 。
 ```
 
 ## Other
