@@ -182,13 +182,26 @@ export default {
       type: Array,
       default: () => []
     },
+    sundayStart: {
+      type: Boolean,
+      default: () => false
+    },
     agoDayHide: { type: String, default: `0` },
     futureDayHide: { type: String, default: `2554387200` }
   },
   created() {
+    this.intStart();
     this.myDate = new Date();
   },
   methods: {
+    intStart() {
+      if (this.sundayStart) {
+        this.textTop = ['日', '一', '二', '三', '四', '五', '六'];
+      } else {
+        this.textTop = ['一', '二', '三', '四', '五', '六', '日'];
+      }
+      timeUtil.sundayStart = this.sundayStart;
+    },
     setClass(data) {
       let obj = {};
       obj[data.markClassName] = data.markClassName;
@@ -300,6 +313,10 @@ export default {
     },
     futureDayHide(val, oldVal) {
       this.futureDayHide = parseInt(val);
+      this.getList(this.myDate);
+    },
+    sundayStart(val, oldVal) {
+      this.intStart();
       this.getList(this.myDate);
     }
   }

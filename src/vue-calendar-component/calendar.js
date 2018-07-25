@@ -11,7 +11,9 @@ export default {
     const year = date.getFullYear()
     const month = date.getMonth() + 1
     const dateFirstOne = new Date(year + '/' + month + '/1')
-    return dateFirstOne.getDay() == 0 ? 6 : dateFirstOne.getDay() - 1
+    return this.sundayStart ?
+      dateFirstOne.getDay() == 0 ? 7 : dateFirstOne.getDay() :
+      dateFirstOne.getDay() == 0 ? 6 : dateFirstOne.getDay() - 1;
   },
   /**
    * 获取当前日期上个月或者下个月
@@ -113,13 +115,7 @@ export default {
   //获取某月的列表 用于渲染
   getMonthList: function (date) {
     return [...this.getLeftArr(date), ...this.getMonthListNoOther(date), ...this.getRightArr(date)]
-  }
+  },
+  //默认是周一开始 
+  sundayStart: false
 }
-
-
-console.time(`====`);
-for (let i = 0; i < 1000000; i++) {
-  let a = `11`;
-  a = a.replace(`1`, 2);
-}
-console.timeEnd(`====`);

@@ -2,7 +2,7 @@
   <div class="content">
     <!-- agoDayHide='1517483961' -->
     <!-- futureDayHide="1526054400" -->
-    <Calendar ref="Calendar" :markDateMore="arr" :markDate="arr2" v-on:isToday="clickToday" agoDayHide=1530115200 v-on:choseDay="clickDay" v-on:changeMonth="changeDate"></Calendar>
+    <Calendar ref="Calendar" :sundayStart="true" :markDateMore="arr" :markDate="arr2" v-on:isToday="clickToday" agoDayHide=1530115200 v-on:choseDay="clickDay" v-on:changeMonth="changeDate"></Calendar>
     <br/>
     <h3 @click="demo">markDateMore标记不同风格：：1号2号一种风格====13号另一种风格</h3>
     <br>
