@@ -44,7 +44,7 @@ import Calendar from 'vue-calendar-component';
       //第一个标记和第二个标记不能同时使用
       // :agoDayHide='1514937600' //某个日期以前的不允许点击  时间戳10位
       // :futureDayHide='1525104000' //某个日期以后的不允许点击  时间戳10位
-      // :sundayStart="true" //默认是周一开始 当是true的时候 是周一开始
+      // :sundayStart="true" //默认是周一开始 当是true的时候 是周日开始
     ></Calendar>
 
     clickDay(data) {
@@ -73,7 +73,7 @@ import Calendar from 'vue-calendar-component';
 | markDateMore   | 需要不同的标记如上Usage 最后一行示例代码                     | 空数组 |    否    |
 | agoDayHide     | 某个日期以前的不允许点击 时间戳长度是 10 位                  |   0    |    否    |
 | futureDayHide  | 某个日期以后的不允许点击 时间戳长度是 10 位                  |  很大  |    否    |
-| sundayStart  | 默认是周一开始 当是true的时候 是周一开始               |  false  |    否    |
+| sundayStart  | 默认是周一开始 当是true的时候 是周日开始               |  false  |    否    |
 
 ```javascript
 ✅ 在 Calendar标签上添加 ref 属性, 暴露出三个方法可以  直接切换月份
