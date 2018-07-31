@@ -14,8 +14,8 @@
 </template>
 
 <script>
-// import Calendar from '../vue-calendar-component/index';
-import Calendar from 'vue-calendar-component';
+import Calendar from '../vue-calendar-component/index';
+// import Calendar from 'vue-calendar-component';
 export default {
   data() {
     return {
@@ -55,7 +55,7 @@ export default {
   created() {
     function format(date, index) {
       date = new Date(date);
-      return `${date.getFullYear()}/${date.getMonth() + 1}/${index}`;
+      return `${date.getFullYear()}-${date.getMonth() + 1}-${index}`;
     }
     this.arr = [
       {

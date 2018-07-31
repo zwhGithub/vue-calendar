@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "vue-calendar-component": "^2.6.7",
+    "vue-calendar-component": "^2.7.1",
     "vue-router": "^3.0.1",
     "vue-toast-component": "^2.0.0"
   },
