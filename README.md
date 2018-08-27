@@ -85,7 +85,20 @@ import Calendar from 'vue-calendar-component';
       ✅ this.$refs.Calendar.ChoseMonth('2018-12-12',false); //跳转到18年12月12日 但是不选中当天
       //第二个参数 false表示不选中日期 。
 ```
+## 遇到错误---
+- 遇到提示UglifyJs打包编译错误。
+ 因为当前版本UglifyJs不知道编译es6
+ 
+ 解决方法
+ npm install --save-dev babel-preset-env
+然后在根目录创建一个 .babelrc 文件
+在输入,
+{
+  "presets": ["env"]
+}
+保存 重新build就OK了
 
+就提查看https://github.com/babel/babel-preset-env
 ## Other
 
 * src 下面的 App.vue 有 demo 可以参考.
