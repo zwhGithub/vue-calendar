@@ -98,7 +98,7 @@ import Calendar from 'vue-calendar-component';
 }
 保存 重新build就OK了
 
-就提查看https://github.com/babel/babel-preset-env
+[babel-preset-env官方文档](https://github.com/babel/babel-preset-env)
 ## Other
 
 * src 下面的 App.vue 有 demo 可以参考.
