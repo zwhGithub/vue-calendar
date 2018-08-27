@@ -90,13 +90,13 @@ import Calendar from 'vue-calendar-component';
  因为当前版本UglifyJs不知道编译es6
  
  解决方法
- npm install --save-dev babel-preset-env
+ **npm install --save-dev babel-preset-env** <br>
 然后在根目录创建一个 .babelrc 文件
-在输入,
+在输入,<br>
 {
   "presets": ["env"]
 }
-保存 重新build就OK了
+<br>保存 重新build就OK了
 
 [babel-preset-env官方文档](https://github.com/babel/babel-preset-env)
 ## Other
