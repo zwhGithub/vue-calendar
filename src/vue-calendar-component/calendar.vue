@@ -166,7 +166,6 @@ import timeUtil from './calendar';
 export default {
   data() {
     return {
-      textTop: ['一', '二', '三', '四', '五', '六', '日'],
       myDate: [],
       list: [],
       historyChose: [],
@@ -182,6 +181,10 @@ export default {
       type: Array,
       default: () => []
     },
+    textTop: {
+      type: Array,
+      default: () => [ '日','一', '二', '三', '四', '五', '六']
+    },
     sundayStart: {
       type: Boolean,
       default: () => false
@@ -195,11 +198,6 @@ export default {
   },
   methods: {
     intStart() {
-      if (this.sundayStart) {
-        this.textTop = ['日', '一', '二', '三', '四', '五', '六'];
-      } else {
-        this.textTop = ['一', '二', '三', '四', '五', '六', '日'];
-      }
       timeUtil.sundayStart = this.sundayStart;
     },
     setClass(data) {
