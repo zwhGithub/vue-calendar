@@ -1,4 +1,4 @@
-<style>
+<style scoped>
 @media screen and (min-width: 460px) {
   .wh_item_date:hover {
     background: #71c7a5;

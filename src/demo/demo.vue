@@ -72,7 +72,7 @@ export default {
 </script>
 
 <!-- Add "scoped " attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 h3 {
   text-align: center;
   width: 90%;
@@ -100,5 +100,8 @@ h3 {
 }
 .wh_content_item > .wh_isMark {
   background: orange;
+}
+ .wh_container >>> .wh_content_all{
+  background-color: red;
 }
 </style>
