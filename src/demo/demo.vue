@@ -23,11 +23,11 @@ export default {
       arr2: [],
       arr: [
         {
-          date: '2018/6/1',
+          date: '2018/8/1',
           className: 'mark1'
         },
         {
-          date: '2018/6/13',
+          date: '2018/8/13',
           className: 'mark2'
         }
       ]
@@ -57,16 +57,23 @@ export default {
       date = new Date(date);
       return `${date.getFullYear()}-${date.getMonth() + 1}-${index}`;
     }
-    this.arr = [
-      {
-        date: format(new Date(), 1),
+    setTimeout(() => {
+      this.arr = [
+        {
+          date: format(new Date(), 3),
+          className: 'mark1'
+        },
+        {
+          date: format(new Date(), 12),
+          className: 'mark2'
+        }
+      ];
+      this.arr.push({
+        date: format(new Date(), 15),
         className: 'mark1'
-      },
-      {
-        date: format(new Date(), 13),
-        className: 'mark2'
-      }
-    ];
+      })
+    }, 1000)
+
   }
 };
 </script>
@@ -91,17 +98,17 @@ h3 {
   margin-top: 20px;
 }
 
-.mark1 {
-  background-color: red;
+.wh_container >>> .mark1 {
+  background-color: orange;
 }
 
-.mark2 {
+.wh_container >>> .mark2 {
   background-color: blue;
 }
 .wh_content_item > .wh_isMark {
   background: orange;
 }
- .wh_container >>> .wh_content_all{
+.wh_container >>> .wh_content_all {
   background-color: red;
 }
 </style>

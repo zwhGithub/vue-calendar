@@ -183,7 +183,7 @@ export default {
     },
     textTop: {
       type: Array,
-      default: () => [ '日','一', '二', '三', '四', '五', '六']
+      default: () => ['日', '一', '二', '三', '四', '五', '六']
     },
     sundayStart: {
       type: Boolean,
@@ -299,23 +299,37 @@ export default {
     this.getList(this.myDate);
   },
   watch: {
-    markDate(val, oldVal) {
-      this.getList(this.myDate);
+    markDate: {
+      handler(val, oldVal) {
+        this.getList(this.myDate);
+      },
+      deep: true
     },
-    markDateMore(val, oldVal) {
-      this.getList(this.myDate);
+    markDateMore: {
+      handler(val, oldVal) {
+        this.getList(this.myDate);
+      },
+      deep: true
     },
-    agoDayHide(val, oldVal) {
-      this.agoDayHide = parseInt(val);
-      this.getList(this.myDate);
+    agoDayHide: {
+      handler(val, oldVal) {
+        this.agoDayHide = parseInt(val);
+        this.getList(this.myDate);
+      },
+      deep: true
     },
-    futureDayHide(val, oldVal) {
-      this.futureDayHide = parseInt(val);
-      this.getList(this.myDate);
+    futureDayHide: {
+      handler(val, oldVal) {
+        this.futureDayHide = parseInt(val);
+        this.getList(this.myDate);
+      },
+      deep: true
     },
-    sundayStart(val, oldVal) {
-      this.intStart();
-      this.getList(this.myDate);
+    sundayStart: {
+      handler(val, oldVal) {
+        this.intStart();
+        this.getList(this.myDate);
+      }, deep: true
     }
   }
 };
