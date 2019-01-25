@@ -4,6 +4,8 @@
 * 占用内存小，性能好，样式好看，可扩展性强
 * 原生 js 开发，没引入第三方库
 
+## [github地址](https://github.com/zwhGithub/vue-calendar) 详细文档
+
 ## Why
 
 * Github 上很多点击弹出日历选择某个时间的组件，却没有找到单纯展示日历并且能点击获取时间的组件
