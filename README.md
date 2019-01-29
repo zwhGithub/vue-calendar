@@ -4,7 +4,8 @@
 * 占用内存小，性能好，样式好看，可扩展性强
 * 原生 js 开发，没引入第三方库
 
-## [github地址](https://github.com/zwhGithub/vue-calendar) 详细文档
+![](https://img.shields.io/npm/v/vue-calendar-component.svg)
+![](https://img.shields.io/npm/dt/vue-calendar-component.svg)
 
 ## Why
 
@@ -27,6 +28,9 @@
 npm i vue-calendar-component --save
 cnpm i vue-calendar-component --save  //国内镜像
 ```
+
+## [github地址](https://github.com/zwhGithub/vue-calendar) 详细文档
+
 
 ## Usage
 
@@ -66,17 +70,17 @@ import Calendar from 'vue-calendar-component';
 
 ### API
 
-| 属性           | 说明                                                         |  默认  | 是否必传 |
-| :------------- | :----------------------------------------------------------- | :----: | :------: |
-| choseDay       | 选中某天调用的方法，返回选中的日期 YY-MM-DD                  |   无   |    否    |
-| changeMonth    | 切换月份调用的方法，返回切换到某月的日期 YY-MM-DD            |   无   |    否    |
-| isToday        | 切换月份的时候，如果切到当前月份，调用这个方法，返回当前月今天 |   无   |    否    |
-| markDate      | 如果需要某月的几天被标注，传当月的日期数组。如["2018/2/2","2018/2/6"]被会标注（相同的标记） | 空数组 |    否    |
-| markDateMore   | 需要不同的标记如上Usage 最后一行示例代码                     | 空数组 |    否    |
-| agoDayHide     | 某个日期以前的不允许点击 时间戳长度是 10 位                  |   0    |    否    |
-| futureDayHide  | 某个日期以后的不允许点击 时间戳长度是 10 位                  |  很大  |    否    |
-| sundayStart  | 默认是周一开始 当是true的时候 是周日开始               |  false  |    否    |
-| textTop  | 日历头部的文字，默认是 [ '日','一', '二', '三', '四', '五', '六'] ，可以根据自己的需求进行不同的修改。             |  ---  |    否    |
+| 属性          | 说明                                                                                                   |  默认  | 是否必传 |
+| :------------ | :----------------------------------------------------------------------------------------------------- | :----: | :------: |
+| choseDay      | 选中某天调用的方法，返回选中的日期 YY-MM-DD                                                            |   无   |    否    |
+| changeMonth   | 切换月份调用的方法，返回切换到某月的日期 YY-MM-DD                                                      |   无   |    否    |
+| isToday       | 切换月份的时候，如果切到当前月份，调用这个方法，返回当前月今天                                         |   无   |    否    |
+| markDate      | 如果需要某月的几天被标注，传当月的日期数组。如["2018/2/2","2018/2/6"]被会标注（相同的标记）            | 空数组 |    否    |
+| markDateMore  | 需要不同的标记如上Usage 最后一行示例代码                                                               | 空数组 |    否    |
+| agoDayHide    | 某个日期以前的不允许点击 时间戳长度是 10 位                                                            |   0    |    否    |
+| futureDayHide | 某个日期以后的不允许点击 时间戳长度是 10 位                                                            |  很大  |    否    |
+| sundayStart   | 默认是周一开始 当是true的时候 是周日开始                                                               | false  |    否    |
+| textTop       | 日历头部的文字，默认是 [ '日','一', '二', '三', '四', '五', '六'] ，可以根据自己的需求进行不同的修改。 |  ---   |    否    |
 
 ```javascript
 ✅ 在 Calendar标签上添加 ref 属性, 暴露出三个方法可以  直接切换月份
