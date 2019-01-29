@@ -78,7 +78,7 @@ export default {
         date: format(new Date(), 15),
         className: "mark1"
       });
-    }, 1000);
+    }, 300);
   }
 };
 </script>
