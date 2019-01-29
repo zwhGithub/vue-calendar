@@ -4,7 +4,6 @@
     <!-- futureDayHide="1526054400" -->
     <Calendar
       ref="Calendar"
-      :sundayStart="true"
       :markDateMore="arr"
       :markDate="arr2"
       v-on:isToday="clickToday"
