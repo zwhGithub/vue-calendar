@@ -7,7 +7,7 @@
       :markDateMore="arr"
       :markDate="arr2"
       v-on:isToday="clickToday"
-      agoDayHide="1530115200"
+      agoDayHide="1530115220"
       v-on:choseDay="clickDay"
       v-on:changeMonth="changeDate"
     ></Calendar>
