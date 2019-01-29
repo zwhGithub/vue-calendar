@@ -2,20 +2,27 @@
   <div class="content">
     <!-- agoDayHide='1517483961' -->
     <!-- futureDayHide="1526054400" -->
-    <Calendar ref="Calendar" :sundayStart="true" :markDateMore="arr" :markDate="arr2" v-on:isToday="clickToday" agoDayHide=1530115200 v-on:choseDay="clickDay" v-on:changeMonth="changeDate"></Calendar>
-    <br/>
+    <Calendar
+      ref="Calendar"
+      :sundayStart="true"
+      :markDateMore="arr"
+      :markDate="arr2"
+      v-on:isToday="clickToday"
+      agoDayHide="1530115200"
+      v-on:choseDay="clickDay"
+      v-on:changeMonth="changeDate"
+    ></Calendar>
+    <br>
     <h3 @click="demo">markDateMore标记不同风格：：1号2号一种风格====13号另一种风格</h3>
     <br>
     <h3>markDate 标记23号 单一风格 更简单</h3>
-    <div class="div" @click="demo ">
-      点击跳到2018-12-12
-    </div>
+    <div class="div" @click="demo ">点击跳到2018-12-12</div>
   </div>
 </template>
 
 <script>
-import Calendar from '../vue-calendar-component/index';
-// import Calendar from 'vue-calendar-component';
+// import Calendar from '../vue-calendar-component/index';
+import Calendar from "vue-calendar-component";
 export default {
   data() {
     return {
@@ -23,12 +30,12 @@ export default {
       arr2: [],
       arr: [
         {
-          date: '2018/8/1',
-          className: 'mark1'
+          date: "2018/8/1",
+          className: "mark1"
         },
         {
-          date: '2018/8/13',
-          className: 'mark2'
+          date: "2018/8/13",
+          className: "mark2"
         }
       ]
     };
@@ -38,18 +45,18 @@ export default {
   },
   methods: {
     clickDay(data) {
-      console.log('选中了', data); //选中某天
-      this.$toast('选中了' + data);
+      console.log("选中了", data); //选中某天
+      this.$toast("选中了" + data);
     },
     clickToday(data) {
-      console.log('跳到了本月今天', data); //跳到了本月
+      console.log("跳到了本月今天", data); //跳到了本月
     },
     changeDate(data) {
-      this.$toast('切换到的月份为' + data);
-      console.log('左右点击切换月份', data); //左右点击切换月份
+      this.$toast("切换到的月份为" + data);
+      console.log("左右点击切换月份", data); //左右点击切换月份
     },
     demo() {
-      this.$refs.Calendar.ChoseMonth('2018-12-13'); //跳到12月12日选中12月12日
+      this.$refs.Calendar.ChoseMonth("2018-12-13"); //跳到12月12日选中12月12日
     }
   },
   created() {
@@ -61,19 +68,18 @@ export default {
       this.arr = [
         {
           date: format(new Date(), 3),
-          className: 'mark1'
+          className: "mark1"
         },
         {
           date: format(new Date(), 12),
-          className: 'mark2'
+          className: "mark2"
         }
       ];
       this.arr.push({
         date: format(new Date(), 15),
-        className: 'mark1'
-      })
-    }, 1000)
-
+        className: "mark1"
+      });
+    }, 1000);
   }
 };
 </script>
