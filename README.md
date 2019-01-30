@@ -18,7 +18,7 @@
 
 ## 效果
 
-<img width="286" height="528" src="https://zwhgithub.github.io/vue-calendar/dist/WechatIMG4885.jpeg"/>
+<img width="286" height="528" src="http://qiniu.lovejs.top/WechatIMG722-.jpg"/>
 
 * 🎉 觉得好用给一个 star 哦~~ 🎉
 
