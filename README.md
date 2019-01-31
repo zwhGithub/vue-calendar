@@ -18,7 +18,7 @@
 
 ## 效果
 
-![](http://qiniu.lovejs.top/21312312312312312.jpg){:height="100px" width="400px"} 
+<img src="http://qiniu.lovejs.top/21312312312312312.jpg" style="zoom:50%">
 
 * 🎉 觉得好用给一个 star 哦~~ 🎉
 
