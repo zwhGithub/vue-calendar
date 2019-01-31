@@ -18,8 +18,8 @@
 
 ## 效果
 
-<img src="http://qiniu.lovejs.top/21312312312312312.jpg" style="zoom:50%">
-
+<img SRT>
+![](http://qiniu.lovejs.top/21312312312312312.jpg?imageView2/2/h/400)
 * 🎉 觉得好用给一个 star 哦~~ 🎉
 
 ## Install
