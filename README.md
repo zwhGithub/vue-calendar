@@ -18,7 +18,7 @@
 
 ## 效果
 
-![效果](http://qiniu.lovejs.top/21312312312312312.jpg?imageView2/2/h/400)
+![效果](http://qiniu.lovejs.top/21312312312312312.jpg?imageView2/2/h/500)
 * 🎉 觉得好用给一个 star 哦~~ 🎉
 
 ## Install
