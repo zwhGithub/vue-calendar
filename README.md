@@ -18,7 +18,7 @@
 
 ## 效果
 
-![](http://qiniu.lovejs.top/21312312312312312.jpg){:height="30%" width="30%"} 
+![](http://qiniu.lovejs.top/21312312312312312.jpg){:height="100px" width="400px"} 
 
 * 🎉 觉得好用给一个 star 哦~~ 🎉
 
