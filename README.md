@@ -82,7 +82,7 @@ import Calendar from 'vue-calendar-component';
 | textTop       | 日历头部的文字，默认是 [ '日','一', '二', '三', '四', '五', '六'] ，可以根据自己的需求进行不同的修改。 |  ---   |    否    |
 
 ```javascript
-✅ 在 Calendar标签上添加 ref 属性, 暴露出三个方法可以  直接切换月份
+✅ 在 Calendar标签上添加 ref 属性, 暴露出三个方法可以 直接切换月份
 例如: <Calendar ref="Calendar"></Calendar>
 
       ✅ this.$refs.Calendar.PreMonth();  //调用方法实现转到上个月
