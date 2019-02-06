@@ -59,7 +59,7 @@ import Calendar from 'vue-calendar-component';
       console.log(data); //左右点击切换月份
     },
     clickToday(data) {
-      console.log(data); //跳到了本月
+      console.log(data); // 跳到了本月
     }
 
   // 多个标记示例
