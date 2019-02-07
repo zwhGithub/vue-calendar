@@ -2,7 +2,7 @@
 
 * 基于 vue 2.0 开发的轻量，高性能日历组件
 * 占用内存小，性能好，样式好看，可扩展性强
-* 原生 js 开发，没引入第三方库
+* 原生 js 开发，没引入第三方库。
 
 ![](https://img.shields.io/npm/v/vue-calendar-component.svg)
 ![](https://img.shields.io/npm/dt/vue-calendar-component.svg)
