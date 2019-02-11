@@ -107,5 +107,5 @@ import Calendar from 'vue-calendar-component';
 [babel-preset-env官方文档](https://github.com/babel/babel-preset-env)
 ## Other
 
-* src 下面的 App.vue 有 demo 可以参考.
-* 如果有其他问题或者版本上, 功能上不兼容的 邮件沟通 zwhcoder@gmail.com
+* src 下面的 App.vue 有 demo 可以参考
+* 如果有其他问题或者版本上, 功能上不兼容的 邮件沟通 zwhcoder@gmail.com 
