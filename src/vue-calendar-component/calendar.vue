@@ -188,8 +188,14 @@ export default {
       type: Boolean,
       default: () => false
     },
-    agoDayHide: { type: String, default: `0` },
-    futureDayHide: { type: String, default: `2554387200` }
+    agoDayHide: {
+      type: String,
+      default: `0`
+    },
+    futureDayHide: {
+      type: String,
+      default: `2554387200`
+    }
   },
   created() {
     this.intStart();
@@ -217,7 +223,7 @@ export default {
     ChoseMonth: function(date, isChosedDay = true) {
       date = timeUtil.dateFormat(date);
       this.myDate = new Date(date);
-      this.$emit("changeMonth", timeUtil.dateFormat(this.myDate));
+      // this.$emit("changeMonth", timeUtil.dateFormat(this.myDate));
       if (isChosedDay) {
         this.getList(this.myDate, date, isChosedDay);
       } else {
@@ -227,7 +233,7 @@ export default {
     PreMonth: function(date, isChosedDay = true) {
       date = timeUtil.dateFormat(date);
       this.myDate = timeUtil.getOtherMonth(this.myDate, "preMonth");
-      this.$emit("changeMonth", timeUtil.dateFormat(this.myDate));
+      // this.$emit("changeMonth", timeUtil.dateFormat(this.myDate));
       if (isChosedDay) {
         this.getList(this.myDate, date, isChosedDay);
       } else {
@@ -237,7 +243,7 @@ export default {
     NextMonth: function(date, isChosedDay = true) {
       date = timeUtil.dateFormat(date);
       this.myDate = timeUtil.getOtherMonth(this.myDate, "nextMonth");
-      this.$emit("changeMonth", timeUtil.dateFormat(this.myDate));
+      // this.$emit("changeMonth", timeUtil.dateFormat(this.myDate));
       if (isChosedDay) {
         this.getList(this.myDate, date, isChosedDay);
       } else {
@@ -278,11 +284,11 @@ export default {
         //无法选中某天
         k.dayHide = t < this.agoDayHide || t > this.futureDayHide;
         if (k.isToday) {
-          this.$emit("isToday", nowTime);
+          // this.$emit("isToday", nowTime);
         }
         let flag = !k.dayHide && k.otherMonth === "nowMonth";
         if (chooseDay && chooseDay === nowTime && flag) {
-          this.$emit("choseDay", nowTime);
+          // this.$emit("choseDay", nowTime);
           this.historyChose.push(nowTime);
           k.chooseDay = true;
         } else if (
@@ -314,14 +320,12 @@ export default {
     },
     agoDayHide: {
       handler(val, oldVal) {
-        this.agoDayHide = parseInt(val);
         this.getList(this.myDate);
       },
       deep: true
     },
     futureDayHide: {
       handler(val, oldVal) {
-        this.futureDayHide = parseInt(val);
         this.getList(this.myDate);
       },
       deep: true
